@@ -31,9 +31,13 @@ export function HeroSection() {
           Moraitis School Presents
         </p>
 
-        <h1 className="mb-6 text-balance font-serif text-5xl font-bold leading-tight tracking-tight text-primary-foreground md:text-7xl">
+        <h1 className="mb-4 text-balance font-serif text-5xl font-bold leading-tight tracking-tight text-primary-foreground md:text-7xl">
           MoMUN 2026
         </h1>
+
+        <p className="mb-8 text-lg font-semibold tracking-wide text-accent md:text-xl">
+          Unity in a Divided World
+        </p>
 
         <p className="mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
           The Moraitis Model United Nations Conference. Two days of diplomacy,

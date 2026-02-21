@@ -3,7 +3,7 @@ import { Globe, Users, BookOpen, Award } from "lucide-react"
 const stats = [
   { icon: Globe, label: "Countries Represented", value: "30+" },
   { icon: Users, label: "Delegates Expected", value: "250+" },
-  { icon: BookOpen, label: "Committees", value: "6" },
+  { icon: BookOpen, label: "Committees", value: "9" },
   { icon: Award, label: "Years of MUN Excellence", value: "5+" },
 ]
 

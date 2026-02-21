@@ -3,46 +3,67 @@ import { ArrowRight } from "lucide-react"
 
 const committees = [
   {
-    abbreviation: "GA",
-    name: "General Assembly",
-    topic: "Addressing the Global Refugee Crisis and Forced Displacement",
+    abbreviation: "GA 1",
+    name: "General Assembly First Committee",
+    topic: "Disarmament and International Security",
     description:
-      "The principal deliberative organ of the United Nations, bringing all member states together to discuss the most pressing global challenges.",
+      "The First Committee deals with disarmament, global challenges, and threats to peace that affect the international community.",
   },
   {
-    abbreviation: "SC",
-    name: "Security Council",
-    topic: "De-escalation of Conflicts in the Middle East",
+    abbreviation: "GA 3",
+    name: "General Assembly Third Committee",
+    topic: "Social, Humanitarian and Cultural Affairs",
     description:
-      "Tasked with maintaining international peace and security, the Security Council addresses threats and authorizes collective action.",
+      "Focuses on social development questions, including human rights, humanitarian affairs, and advancement of women and children.",
+  },
+  {
+    abbreviation: "GA 4",
+    name: "General Assembly Fourth Committee",
+    topic: "Special Political and Decolonization",
+    description:
+      "Addresses special political subjects including decolonization, Palestinian refugees, peacekeeping, outer space, and public information.",
+  },
+  {
+    abbreviation: "GA 6",
+    name: "General Assembly Sixth Committee",
+    topic: "Legal Affairs",
+    description:
+      "The Legal Committee considers legal questions and the progressive development of international law and its codification.",
   },
   {
     abbreviation: "ECOSOC",
     name: "Economic and Social Council",
-    topic: "Bridging the Digital Divide in Developing Nations",
+    topic: "Sustainable Development and Global Prosperity",
     description:
       "Coordinates the economic and social work of the UN, addressing sustainable development, education, and global prosperity.",
   },
   {
-    abbreviation: "HRC",
-    name: "Human Rights Council",
-    topic: "Protecting Freedom of Expression in the Digital Age",
+    abbreviation: "SC",
+    name: "Security Council",
+    topic: "Maintaining International Peace and Security",
     description:
-      "Responsible for promoting and protecting human rights around the globe, addressing violations and making recommendations.",
-  },
-  {
-    abbreviation: "UNEP",
-    name: "UN Environment Programme",
-    topic: "Combating Plastic Pollution in International Waters",
-    description:
-      "Sets the global environmental agenda and promotes sustainable development within the United Nations system.",
+      "Tasked with maintaining international peace and security, the Security Council addresses threats and authorizes collective action.",
   },
   {
     abbreviation: "WHO",
     name: "World Health Organization",
-    topic: "Pandemic Preparedness and Global Health Equity",
+    topic: "Global Health Challenges",
     description:
       "Directs international health within the UN system, leading responses to health emergencies and promoting well-being.",
+  },
+  {
+    abbreviation: "WB",
+    name: "World Bank",
+    topic: "Economic Development and Poverty Reduction",
+    description:
+      "Works to reduce poverty and support development by providing loans, policy advice, and technical assistance to countries.",
+  },
+  {
+    abbreviation: "UNESCO",
+    name: "UN Educational, Scientific and Cultural Organization",
+    topic: "Education, Science, and Culture",
+    description:
+      "Seeks to build peace through international cooperation in education, sciences, culture, and communication.",
   },
 ]
 
