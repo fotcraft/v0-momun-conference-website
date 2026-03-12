@@ -2,14 +2,33 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { Menu, X } from "lucide-react"
+import Link from "next/link"
+import { Menu, X, ChevronDown } from "lucide-react"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuSeparator,
+  DropdownMenuLabel,
+} from "@/components/ui/dropdown-menu"
 
 const navLinks = [
   { label: "About", href: "#about" },
+  { label: "Secretariat", href: "#secretariat" },
   { label: "Committees", href: "#committees" },
   { label: "Schedule", href: "#schedule" },
   { label: "Venue", href: "#venue" },
-  { label: "Contact", href: "#contact" },
+]
+
+const applyLinks = [
+  { label: "Chair Application", href: "/apply/chair", description: "Apply to chair a committee" },
+  { label: "Head Application", href: "/apply/head", description: "Apply to lead a department" },
+]
+
+const registerLinks = [
+  { label: "School Registration", href: "/register/school", description: "Register your school delegation" },
+  { label: "Individual Registration", href: "/register/individual", description: "Register as an independent delegate" },
 ]
 
 export function Navbar() {
@@ -31,7 +50,7 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src="/images/momun-logo.png"
             alt="MoMUN Logo"
@@ -42,10 +61,10 @@ export function Navbar() {
           <span className="text-lg font-bold tracking-wide text-primary-foreground">
             MoMUN 2026
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -56,13 +75,47 @@ export function Navbar() {
               </a>
             </li>
           ))}
+
+          {/* Apply Dropdown */}
           <li>
-            <a
-              href="#contact"
-              className="rounded-md bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
-            >
-              Register
-            </a>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium tracking-wide text-primary-foreground/80 transition-colors hover:text-primary-foreground">
+                Apply <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuLabel>Staff Applications</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                {applyLinks.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <Link href={link.href} className="flex flex-col items-start">
+                      <span className="font-medium">{link.label}</span>
+                      <span className="text-xs text-muted-foreground">{link.description}</span>
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </li>
+
+          {/* Register Dropdown */}
+          <li>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="rounded-md bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90 flex items-center gap-1">
+                Register <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuLabel>Delegate Registration</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                {registerLinks.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <Link href={link.href} className="flex flex-col items-start">
+                      <span className="font-medium">{link.label}</span>
+                      <span className="text-xs text-muted-foreground">{link.description}</span>
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </li>
         </ul>
 
@@ -91,14 +144,37 @@ export function Navbar() {
                 </a>
               </li>
             ))}
+            
             <li className="pt-2">
-              <a
-                href="#contact"
-                onClick={() => setIsMobileOpen(false)}
-                className="block rounded-md bg-accent px-4 py-3 text-center text-sm font-semibold text-accent-foreground"
-              >
+              <p className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground/50">
+                Apply
+              </p>
+              {applyLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileOpen(false)}
+                  className="block rounded-md px-4 py-3 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </li>
+
+            <li className="pt-2">
+              <p className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground/50">
                 Register
-              </a>
+              </p>
+              {registerLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileOpen(false)}
+                  className="block rounded-md px-4 py-3 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </li>
           </ul>
         </div>
