@@ -36,7 +36,7 @@ export function HeroSection() {
         </h1>
 
         <p className="mb-8 text-lg font-semibold tracking-wide text-accent md:text-xl">
-          Unity in a Divided World
+          Equity in an Uneducated World
         </p>
 
         <p className="mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-primary-foreground/80 md:text-xl">

@@ -3,27 +3,27 @@ import { Users } from "lucide-react"
 const secretariat = [
   {
     position: "Secretary-General",
-    name: "Alex Falenopoulou",
+    name: "Alexandra Piperaki",
     abbreviation: "SG",
   },
   {
     position: "Deputy Secretary-General",
-    name: "Michalis Podokoftis",
+    name: "Michalis Fotiadis",
     abbreviation: "DSG",
   },
   {
     position: "President of the General Assembly",
-    name: "Lefteris Mavrolover",
+    name: "Lefteris Tsampras",
     abbreviation: "PGA",
   },
   {
     position: "Deputy President of the General Assembly",
-    name: "Aggelos Komondoulos",
+    name: "Aggelos Komondouros",
     abbreviation: "DPGA",
   },
   {
     position: "Deputy President of the General Assembly",
-    name: "Charis Stamataexwkopelais",
+    name: "Charis Babalis",
     abbreviation: "DPGA",
   },
 ]
