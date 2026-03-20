@@ -82,7 +82,7 @@ export default function SchoolRegistrationPage() {
             <ArrowLeft className="h-5 w-5" />
             <span>Back</span>
           </Link>
-          <Image src="/images/momun-logo.png" alt="MoMUN Logo" width={40} height={40} className="ml-auto" />
+          <Image src="/images/momun-logo.png" alt="MoMUN Logo" width={40} height={40} className="ml-auto h-10 w-auto" />
         </div>
       </header>
 

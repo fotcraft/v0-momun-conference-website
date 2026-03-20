@@ -26,9 +26,9 @@ export function Footer() {
               <Image
                 src="/images/momun-logo.png"
                 alt="MoMUN Logo"
-                width={40}
-                height={40}
-                className="rounded"
+              width={40}
+              height={40}
+              className="h-10 w-auto rounded"
               />
               <span className="text-lg font-bold text-foreground">MoMUN 2026</span>
             </div>

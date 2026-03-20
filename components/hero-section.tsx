@@ -23,7 +23,7 @@ export function HeroSection() {
           alt="MoMUN Logo"
           width={160}
           height={160}
-          className="mb-8"
+          className="mb-8 h-40 w-auto"
           priority
         />
 

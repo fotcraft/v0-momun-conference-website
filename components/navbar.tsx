@@ -56,7 +56,7 @@ export function Navbar() {
             alt="MoMUN Logo"
             width={44}
             height={44}
-            className="rounded"
+            className="h-11 w-auto rounded"
           />
           <span className="text-lg font-bold tracking-wide text-primary-foreground">
             MoMUN 2026
