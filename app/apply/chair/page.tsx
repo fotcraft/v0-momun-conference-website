@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -15,7 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle } from "lucide-react"
+import { ArrowLeft, CheckCircle, Upload, X, FileText, Loader2 } from "lucide-react"
 
 const committees = [
   { value: "ga1", label: "GA 1 - Disarmament and International Security" },
@@ -33,6 +33,9 @@ export default function ChairApplicationPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState("")
+  const [pdfFile, setPdfFile] = useState<File | null>(null)
+  const [isUploadingPdf, setIsUploadingPdf] = useState(false)
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -49,16 +52,64 @@ export default function ChairApplicationPage() {
     motivationLetter: "",
   })
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      if (file.type !== "application/pdf") {
+        setError("Please upload a PDF file")
+        return
+      }
+      if (file.size > 10 * 1024 * 1024) {
+        setError("File size must be less than 10MB")
+        return
+      }
+      setPdfFile(file)
+      setError("")
+    }
+  }
+
+  const removePdf = () => {
+    setPdfFile(null)
+    if (fileInputRef.current) {
+      fileInputRef.current.value = ""
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     setError("")
 
     try {
+      let motivationLetterPdfUrl = ""
+
+      // Upload PDF if provided
+      if (pdfFile) {
+        setIsUploadingPdf(true)
+        const pdfFormData = new FormData()
+        pdfFormData.append("file", pdfFile)
+        
+        const uploadResponse = await fetch("/api/upload/pdf", {
+          method: "POST",
+          body: pdfFormData,
+        })
+
+        if (!uploadResponse.ok) {
+          throw new Error("Failed to upload PDF")
+        }
+
+        const uploadData = await uploadResponse.json()
+        motivationLetterPdfUrl = uploadData.url
+        setIsUploadingPdf(false)
+      }
+
       const response = await fetch("/api/applications/chair", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          motivationLetterPdfUrl,
+        }),
       })
 
       if (!response.ok) {
@@ -71,6 +122,7 @@ export default function ChairApplicationPage() {
       setError(err instanceof Error ? err.message : "Failed to submit application")
     } finally {
       setIsSubmitting(false)
+      setIsUploadingPdf(false)
     }
   }
 
@@ -282,15 +334,66 @@ export default function ChairApplicationPage() {
                     id="motivationLetter"
                     placeholder="Tell us why you want to be a Chair at MoMUN 2026 and what qualities you would bring to the role..."
                     rows={6}
-                    required
+                    required={!pdfFile}
                     value={formData.motivationLetter}
                     onChange={(e) => setFormData({ ...formData, motivationLetter: e.target.value })}
                   />
                 </div>
+
+                <div className="space-y-2">
+                  <Label>Upload Motivation Letter as PDF (Recommended)</Label>
+                  <p className="text-sm text-muted-foreground">
+                    We recommend uploading a well-formatted PDF version of your motivation letter for best presentation.
+                  </p>
+                  
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept=".pdf,application/pdf"
+                    onChange={handleFileChange}
+                    className="hidden"
+                    id="pdf-upload"
+                  />
+
+                  {!pdfFile ? (
+                    <button
+                      type="button"
+                      onClick={() => fileInputRef.current?.click()}
+                      className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed border-border bg-muted/50 px-4 py-8 text-muted-foreground transition-colors hover:border-primary hover:bg-muted"
+                    >
+                      <Upload className="h-5 w-5" />
+                      <span>Click to upload PDF (max 10MB)</span>
+                    </button>
+                  ) : (
+                    <div className="flex items-center gap-3 rounded-lg border border-border bg-muted/50 px-4 py-3">
+                      <FileText className="h-8 w-8 text-primary" />
+                      <div className="flex-1 overflow-hidden">
+                        <p className="truncate font-medium text-foreground">{pdfFile.name}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {(pdfFile.size / 1024 / 1024).toFixed(2)} MB
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={removePdf}
+                        className="rounded-full p-1 text-muted-foreground hover:bg-destructive/10 hover:text-destructive"
+                      >
+                        <X className="h-5 w-5" />
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
 
               <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Submit Application"}
+                {isSubmitting ? (
+                  <span className="flex items-center gap-2">
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    {isUploadingPdf ? "Uploading PDF..." : "Submitting..."}
+                  </span>
+                ) : (
+                  "Submit Application"
+                )}
               </Button>
             </form>
           </CardContent>
