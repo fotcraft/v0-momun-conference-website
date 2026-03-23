@@ -17,13 +17,7 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Secretariat", href: "#secretariat" },
   { label: "Committees", href: "#committees" },
-  { label: "Schedule", href: "#schedule" },
   { label: "Venue", href: "#venue" },
-]
-
-const applyLinks = [
-  { label: "Chair Application", href: "/apply/chair", description: "Apply to chair a committee" },
-  { label: "Head Application", href: "/apply/head", description: "Apply to lead a department" },
 ]
 
 const registerLinks = [
@@ -76,25 +70,14 @@ export function Navbar() {
             </li>
           ))}
 
-          {/* Apply Dropdown */}
+          {/* Chair Application */}
           <li>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium tracking-wide text-primary-foreground/80 transition-colors hover:text-primary-foreground">
-                Apply <ChevronDown className="h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
-                <DropdownMenuLabel>Staff Applications</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                {applyLinks.map((link) => (
-                  <DropdownMenuItem key={link.href} asChild>
-                    <Link href={link.href} className="flex flex-col items-start">
-                      <span className="font-medium">{link.label}</span>
-                      <span className="text-xs text-muted-foreground">{link.description}</span>
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Link
+              href="/apply/chair"
+              className="text-sm font-medium tracking-wide text-primary-foreground/80 transition-colors hover:text-primary-foreground"
+            >
+              Chair Application
+            </Link>
           </li>
 
           {/* Register Dropdown */}
@@ -145,20 +128,14 @@ export function Navbar() {
               </li>
             ))}
             
-            <li className="pt-2">
-              <p className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground/50">
-                Apply
-              </p>
-              {applyLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileOpen(false)}
-                  className="block rounded-md px-4 py-3 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <li>
+              <Link
+                href="/apply/chair"
+                onClick={() => setIsMobileOpen(false)}
+                className="block rounded-md px-4 py-3 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              >
+                Chair Application
+              </Link>
             </li>
 
             <li className="pt-2">
