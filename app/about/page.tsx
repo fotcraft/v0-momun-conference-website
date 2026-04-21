@@ -16,26 +16,31 @@ const secretariat = [
     position: "Secretary-General",
     name: "Alexandra Piperaki",
     abbreviation: "SG",
+    photo: "/images/secretariat/alexandra-piperaki.png",
   },
   {
     position: "Deputy Secretary-General",
     name: "Michalis Fotiadis",
     abbreviation: "DSG",
+    photo: "/images/secretariat/michalis-fotiadis.png",
   },
   {
     position: "President of the General Assembly",
     name: "Lefteris Tsampras",
     abbreviation: "PGA",
+    photo: null,
   },
   {
     position: "Deputy President of the General Assembly",
     name: "Aggelos Komondouros",
     abbreviation: "DPGA",
+    photo: null,
   },
   {
     position: "Deputy President of the General Assembly",
     name: "Charis Babalis",
     abbreviation: "DPGA",
+    photo: "/images/secretariat/charis-babalis.png",
   },
 ]
 
@@ -124,9 +129,21 @@ export default function AboutPage() {
                 key={`${member.position}-${member.name}`}
                 className="rounded-lg border border-border bg-background p-8 text-center"
               >
-                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary text-2xl font-bold text-primary-foreground">
-                  {member.abbreviation}
-                </div>
+                {member.photo ? (
+                  <div className="mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full">
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      width={96}
+                      height={96}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-primary text-2xl font-bold text-primary-foreground">
+                    {member.abbreviation}
+                  </div>
+                )}
                 <h3 className="mb-1 font-serif text-xl font-bold text-foreground">
                   {member.name}
                 </h3>
