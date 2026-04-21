@@ -12,7 +12,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'MoMUN 2026 | Moraitis Model United Nations Conference',
-  description: 'Join the Moraitis Model United Nations Conference on November 6-7, 2026. Hosted by Moraitis School, Athens, Greece. Diplomacy, debate, and global awareness.',
+  description: 'Join the Moraitis Model United Nations Conference on October 31 - November 1, 2026. Hosted by Moraitis School, Athens, Greece. Diplomacy, debate, and global awareness.',
   generator: 'v0.app',
   icons: {
     icon: [

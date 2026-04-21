@@ -47,7 +47,7 @@ export function HeroSection() {
         <div className="mb-10 flex flex-col items-center gap-4 sm:flex-row sm:gap-8">
           <div className="flex items-center gap-2 text-white/90">
             <CalendarDays className="h-5 w-5 text-white" />
-            <span className="text-sm font-medium">November 6 - 7, 2026</span>
+            <span className="text-sm font-medium">October 31 - November 1, 2026</span>
           </div>
           <div className="flex items-center gap-2 text-white/90">
             <MapPin className="h-5 w-5 text-white" />

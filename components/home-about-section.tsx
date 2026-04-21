@@ -16,7 +16,7 @@ export function HomeAboutSection() {
         {/* Section heading */}
         <div className="mb-16 text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-            November 6-7, 2026
+            October 31 - November 1, 2026
           </p>
           <h2 className="mb-6 text-balance font-serif text-4xl font-bold text-foreground md:text-5xl">
             The 1st Moraitis Model United Nations
