@@ -12,19 +12,28 @@ export const metadata: Metadata = {
 
 const manuals = [
   {
+    title: "Study Guide Template",
+    description: "Official MoMUN Study Guide template for Student Officers. Includes formatting guidelines, section structure, and APA7 citation requirements.",
+    available: true,
+    url: "/documents/study-guide-template.pdf",
+  },
+  {
     title: "Delegate Manual",
     description: "Comprehensive guide for delegates including Rules of Procedure, tips for debate, and conference etiquette.",
     available: false,
+    url: null,
   },
   {
     title: "Position Paper Guide",
     description: "Learn how to write an effective position paper for your assigned country.",
     available: false,
+    url: null,
   },
   {
     title: "Resolution Writing Guide",
     description: "Step-by-step guide on drafting and submitting resolutions.",
     available: false,
+    url: null,
   },
 ]
 
@@ -72,13 +81,15 @@ export default function ManualsPage() {
                   </div>
                 </div>
                 <div className="shrink-0 sm:ml-4">
-                  {manual.available ? (
-                    <Button variant="outline" size="sm">
-                      <Download className="mr-2 h-4 w-4" />
-                      Download PDF
+                  {manual.available && manual.url ? (
+                    <Button asChild size="sm" className="border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
+                      <a href={manual.url} target="_blank" rel="noopener noreferrer" download>
+                        <Download className="mr-2 h-4 w-4" />
+                        Download PDF
+                      </a>
                     </Button>
                   ) : (
-                    <Button variant="outline" size="sm" disabled>
+                    <Button size="sm" disabled className="border border-border bg-transparent text-muted-foreground">
                       Coming Soon
                     </Button>
                   )}
