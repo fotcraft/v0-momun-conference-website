@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 }
 
 const deadlines = [
-  { date: "September 15, 2026", event: "Early Bird Registration Opens", status: "upcoming" },
-  { date: "October 1, 2026", event: "Early Bird Deadline", status: "upcoming" },
+  { date: "May 9, 2026", event: "Staff Applications Deadline (Chair & Student Officer)", status: "soon" },
+  { date: "October 1, 2026", event: "Early Bird Registration Deadline", status: "upcoming" },
   { date: "October 15, 2026", event: "Regular Registration Deadline", status: "upcoming" },
   { date: "October 25, 2026", event: "Late Registration Deadline", status: "upcoming" },
   { date: "November 1, 2026", event: "Final Country Assignments", status: "upcoming" },
@@ -20,8 +20,8 @@ const deadlines = [
 
 const fees = [
   { category: "Early Bird (per delegate)", amount: "TBD", note: "Until October 1" },
-  { category: "Regular (per delegate)", amount: "TBD", note: "October 2-15" },
-  { category: "Late Registration (per delegate)", amount: "TBD", note: "October 16-25" },
+  { category: "Regular (per delegate)", amount: "TBD", note: "October 2–15" },
+  { category: "Late Registration (per delegate)", amount: "TBD", note: "October 16–25" },
   { category: "Faculty Advisor", amount: "Free", note: "One per school" },
 ]
 
@@ -58,12 +58,12 @@ export default function RegistrationGuidePage() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline">
+            <Button asChild className="border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
               <Link href="/country-list">
                 View Country List
               </Link>
             </Button>
-            <Button asChild variant="outline">
+            <Button asChild className="border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
               <Link href="/apply/chair">
                 Student Officer Applications
               </Link>
@@ -110,13 +110,22 @@ export default function RegistrationGuidePage() {
             {deadlines.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-2 rounded-lg border border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between"
+                className={`flex flex-col gap-2 rounded-lg border p-4 sm:flex-row sm:items-center sm:justify-between ${
+                  item.status === "soon"
+                    ? "border-accent/50 bg-accent/10"
+                    : "border-border bg-card"
+                }`}
               >
                 <div className="flex items-center gap-4">
-                  <div className="h-3 w-3 rounded-full bg-accent" />
+                  <div className={`h-3 w-3 rounded-full ${item.status === "soon" ? "bg-accent" : "bg-muted-foreground/40"}`} />
                   <span className="font-medium text-foreground">{item.event}</span>
+                  {item.status === "soon" && (
+                    <span className="rounded-full bg-accent px-2 py-0.5 text-xs font-semibold text-accent-foreground">
+                      Closing Soon
+                    </span>
+                  )}
                 </div>
-                <span className="pl-7 text-sm text-muted-foreground sm:pl-0">
+                <span className={`pl-7 text-sm sm:pl-0 ${item.status === "soon" ? "font-semibold text-accent" : "text-muted-foreground"}`}>
                   {item.date}
                 </span>
               </div>
