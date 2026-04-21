@@ -22,11 +22,11 @@ export function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-4 flex items-center gap-3">
               <Image
-                src="/images/momun-logo.png"
-                alt="MoMUN Logo"
-              width={40}
-              height={40}
-              className="h-10 w-auto rounded"
+                src="/images/moraitis-logo.png"
+                alt="Moraitis School Logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
               />
               <span className="text-lg font-bold text-foreground">MoMUN 2026</span>
             </div>

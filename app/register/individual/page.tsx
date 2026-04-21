@@ -105,7 +105,7 @@ export default function IndividualRegistrationPage() {
             <ArrowLeft className="h-5 w-5" />
             <span>Back</span>
           </Link>
-          <Image src="/images/momun-logo.png" alt="MoMUN Logo" width={40} height={40} className="ml-auto h-10 w-auto" />
+          <Image src="/images/moraitis-logo.png" alt="Moraitis School Logo" width={40} height={40} className="ml-auto h-10 w-auto" />
         </div>
       </header>
 

@@ -19,8 +19,8 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 py-32 text-center">
         <Image
-          src="/images/momun-logo.png"
-          alt="MoMUN Logo"
+          src="/images/moraitis-logo.png"
+          alt="Moraitis School Logo"
           width={160}
           height={160}
           className="mb-8 h-40 w-auto"
