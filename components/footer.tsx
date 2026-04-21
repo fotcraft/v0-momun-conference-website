@@ -9,7 +9,6 @@ const quickLinks = [
 
 const resources = [
   { label: "Registration Guide", href: "/register/guide" },
-  { label: "Delegate Manual", href: "/info/manuals" },
   { label: "Country List", href: "/country-list" },
 ]
 
