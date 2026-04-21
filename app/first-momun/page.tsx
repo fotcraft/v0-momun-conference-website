@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "1st MoMUN | MoMUN 2026",
-  description: "The inaugural Moraitis Model United Nations conference - November 6-7, 2026 in Athens, Greece.",
+  description: "The inaugural Moraitis Model United Nations conference - October 31 - November 1, 2026 in Athens, Greece.",
 }
 
 const committees = [
@@ -57,7 +57,7 @@ const secretariat = [
 ]
 
 const highlights = [
-  { icon: Calendar, label: "November 6-7, 2026", description: "Two days of debate" },
+  { icon: Calendar, label: "October 31 - November 1, 2026", description: "Two days of debate" },
   { icon: MapPin, label: "Moraitis School, Athens", description: "Historic venue" },
   { icon: Users, label: "250+ Delegates", description: "From across Greece and beyond" },
   { icon: Globe, label: "9 Committees", description: "Diverse topics" },

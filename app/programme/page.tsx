@@ -5,7 +5,7 @@ import { Clock } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Programme | MoMUN 2026",
-  description: "View the schedule and programme for MoMUN 2026 - November 6-7, 2026.",
+  description: "View the schedule and programme for MoMUN 2026 - October 31 - November 1, 2026.",
 }
 
 const day1 = [
@@ -68,7 +68,7 @@ export default function ProgrammePage() {
                     Day One
                   </h2>
                   <p className="text-sm text-muted-foreground">
-                    Friday, November 6, 2026
+                    Friday, October 31, 2026
                   </p>
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function ProgrammePage() {
                     Day Two
                   </h2>
                   <p className="text-sm text-muted-foreground">
-                    Saturday, November 7, 2026
+                    Saturday, November 1, 2026
                   </p>
                 </div>
               </div>
