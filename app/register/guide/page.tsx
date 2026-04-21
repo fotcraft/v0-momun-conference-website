@@ -11,11 +11,10 @@ export const metadata: Metadata = {
 }
 
 const deadlines = [
-  { date: "May 9, 2026", event: "Staff Applications Deadline (Chair & Student Officer)", status: "soon" },
-  { date: "October 1, 2026", event: "Early Bird Registration Deadline", status: "upcoming" },
-  { date: "October 15, 2026", event: "Regular Registration Deadline", status: "upcoming" },
-  { date: "October 25, 2026", event: "Late Registration Deadline", status: "upcoming" },
-  { date: "November 1, 2026", event: "Final Country Assignments", status: "upcoming" },
+  { date: "April 24 – May 9, 2026", event: "Student Officer Applications", status: "soon" },
+  { date: "April 24 – September 4, 2026", event: "Form I (School Registration)", status: "upcoming" },
+  { date: "September 10 – October 9, 2026", event: "Form II (Delegate Assignment)", status: "upcoming" },
+  { date: "September 14 – October 9, 2026", event: "Individual Delegate Registration", status: "upcoming" },
 ]
 
 const fees = [
