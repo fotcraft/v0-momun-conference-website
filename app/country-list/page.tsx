@@ -132,7 +132,7 @@ export default function CountryListPage() {
               Country List
             </h1>
             <p className="text-lg leading-relaxed text-primary-foreground/80">
-              92 countries across 9 committees with 589 total delegate positions.
+              92 countries across 9 committees.
             </p>
           </div>
         </div>
@@ -222,14 +222,16 @@ export default function CountryListPage() {
               <tfoot className="bg-muted">
                 <tr className="border-t-2 border-primary">
                   <td className="sticky left-0 z-10 bg-muted px-4 py-3 text-sm font-bold text-foreground">
-                    Total Positions
+                    Countries
                   </td>
                   {totals.map((total, index) => (
                     <td key={index} className="px-3 py-3 text-center text-sm font-bold text-foreground">
                       {total}
                     </td>
                   ))}
-                  <td className="px-3 py-3 text-center text-sm font-bold text-accent">589</td>
+                  <td className="px-3 py-3 text-center text-sm font-bold text-foreground">
+                    {countries.length}
+                  </td>
                 </tr>
               </tfoot>
             </table>

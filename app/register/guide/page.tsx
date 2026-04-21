@@ -270,7 +270,7 @@ export default function RegistrationGuidePage() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+            <Button asChild size="lg" className="border border-white/50 bg-transparent text-white hover:bg-white/10">
               <Link href="/apply/chair">
                 Student Officer Applications
               </Link>

@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
@@ -20,6 +21,39 @@ const committees = [
   { name: "World Health Organization", abbreviation: "WHO" },
   { name: "World Bank", abbreviation: "WB" },
   { name: "UNESCO", abbreviation: "UNESCO" },
+]
+
+const secretariat = [
+  {
+    position: "Secretary-General",
+    name: "Alexandra Piperaki",
+    abbreviation: "SG",
+    photo: "/images/secretariat/alexandra-piperaki.png",
+  },
+  {
+    position: "Deputy Secretary-General",
+    name: "Michalis Fotiadis",
+    abbreviation: "DSG",
+    photo: "/images/secretariat/michalis-fotiadis.png",
+  },
+  {
+    position: "President of the General Assembly",
+    name: "Aggelos Komondouros",
+    abbreviation: "PGA",
+    photo: null,
+  },
+  {
+    position: "Deputy President of the General Assembly",
+    name: "Charis Babalis",
+    abbreviation: "DPGA",
+    photo: "/images/secretariat/charis-babalis.png",
+  },
+  {
+    position: "Deputy President of the General Assembly",
+    name: "Panagiotis Malioglou",
+    abbreviation: "DPGA",
+    photo: null,
+  },
 ]
 
 const highlights = [
@@ -142,6 +176,51 @@ export default function FirstMoMUNPage() {
         </div>
       </section>
 
+      {/* Secretariat */}
+      <section className="bg-card py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+              Leadership
+            </p>
+            <h2 className="mb-6 font-serif text-3xl font-bold text-foreground md:text-4xl">
+              The Secretariat
+            </h2>
+            <p className="mx-auto max-w-2xl text-muted-foreground">
+              Meet the dedicated team of students leading MoMUN 2026.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {secretariat.map((member) => (
+              <div
+                key={`${member.position}-${member.name}`}
+                className="rounded-lg border border-border bg-background p-8 text-center"
+              >
+                {member.photo ? (
+                  <div className="mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full">
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      width={96}
+                      height={96}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-primary text-2xl font-bold text-primary-foreground">
+                    {member.abbreviation}
+                  </div>
+                )}
+                <h3 className="mb-1 font-serif text-xl font-bold text-foreground">
+                  {member.name}
+                </h3>
+                <p className="text-sm text-muted-foreground">{member.position}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-primary py-16">
         <div className="mx-auto max-w-7xl px-6 text-center">
@@ -158,7 +237,7 @@ export default function FirstMoMUNPage() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+            <Button asChild size="lg" className="border border-white/50 bg-transparent text-white hover:bg-white/10">
               <Link href="/register/school">
                 School Registration
               </Link>
