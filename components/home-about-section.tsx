@@ -46,7 +46,7 @@ export function HomeAboutSection() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild size="lg" className="border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
               <Link href="/register/guide">
                 Registration Guide
               </Link>
