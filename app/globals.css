@@ -4,39 +4,44 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Moraitis School green palette */
+  /* primary  = deep forest green  (#2B5232) */
+  /* accent   = sage / mid green   (#5A8C62) */
+  /* card     = pale sage tint     (#EEF4EF) */
+  /* border   = soft green-grey    (#C4D9C6) */
   --background: #ffffff;
-  --foreground: #0a1628;
-  --card: #f0f5fa;
-  --card-foreground: #0a1628;
+  --foreground: #1a2e1b;
+  --card: #eef4ef;
+  --card-foreground: #1a2e1b;
   --popover: #ffffff;
-  --popover-foreground: #0a1628;
-  --primary: #1b3a5c;
+  --popover-foreground: #1a2e1b;
+  --primary: #2b5232;
   --primary-foreground: #ffffff;
-  --secondary: #e8f0f8;
-  --secondary-foreground: #1b3a5c;
-  --muted: #f0f5fa;
-  --muted-foreground: #4a6a8a;
-  --accent: #3a7bd5;
+  --secondary: #ddeade;
+  --secondary-foreground: #2b5232;
+  --muted: #eef4ef;
+  --muted-foreground: #4e7253;
+  --accent: #5a8c62;
   --accent-foreground: #ffffff;
   --destructive: #dc2626;
   --destructive-foreground: #dc2626;
-  --border: #c8daea;
-  --input: #c8daea;
-  --ring: #3a7bd5;
-  --chart-1: #1b3a5c;
-  --chart-2: #3a7bd5;
-  --chart-3: #8ab4e8;
-  --chart-4: #5a9de0;
-  --chart-5: #2a5a8c;
+  --border: #c4d9c6;
+  --input: #c4d9c6;
+  --ring: #5a8c62;
+  --chart-1: #2b5232;
+  --chart-2: #5a8c62;
+  --chart-3: #8db896;
+  --chart-4: #3d6b45;
+  --chart-5: #1c3821;
   --radius: 0.5rem;
-  --sidebar: #f0f5fa;
-  --sidebar-foreground: #0a1628;
-  --sidebar-primary: #1b3a5c;
+  --sidebar: #eef4ef;
+  --sidebar-foreground: #1a2e1b;
+  --sidebar-primary: #2b5232;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #e8f0f8;
-  --sidebar-accent-foreground: #1b3a5c;
-  --sidebar-border: #c8daea;
-  --sidebar-ring: #3a7bd5;
+  --sidebar-accent: #ddeade;
+  --sidebar-accent-foreground: #2b5232;
+  --sidebar-border: #c4d9c6;
+  --sidebar-ring: #5a8c62;
 }
 
 @theme inline {

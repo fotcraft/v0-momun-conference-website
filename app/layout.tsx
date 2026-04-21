@@ -7,7 +7,7 @@ const _inter = Inter({ subsets: ["latin", "greek"] });
 const _merriweather = Merriweather({ subsets: ["latin"], weight: ["300", "400", "700", "900"] });
 
 export const viewport: Viewport = {
-  themeColor: '#1b3a5c',
+  themeColor: '#2b5232',
 }
 
 export const metadata: Metadata = {
