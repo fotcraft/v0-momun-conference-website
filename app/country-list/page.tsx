@@ -125,7 +125,7 @@ export default function CountryListPage() {
       <section className="relative bg-primary pt-32 pb-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/80">
               Delegate Resources
             </p>
             <h1 className="mb-6 font-serif text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl">
