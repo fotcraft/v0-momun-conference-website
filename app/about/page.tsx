@@ -26,14 +26,8 @@ const secretariat = [
   },
   {
     position: "President of the General Assembly",
-    name: "Lefteris Tsampras",
-    abbreviation: "PGA",
-    photo: null,
-  },
-  {
-    position: "Deputy President of the General Assembly",
     name: "Aggelos Komondouros",
-    abbreviation: "DPGA",
+    abbreviation: "PGA",
     photo: null,
   },
   {
@@ -41,6 +35,12 @@ const secretariat = [
     name: "Charis Babalis",
     abbreviation: "DPGA",
     photo: "/images/secretariat/charis-babalis.png",
+  },
+  {
+    position: "Deputy President of the General Assembly",
+    name: "Panagiotis Malioglou",
+    abbreviation: "DPGA",
+    photo: null,
   },
 ]
 
@@ -53,7 +53,7 @@ export default function AboutPage() {
       <section className="relative bg-primary pt-32 pb-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/80">
               About Us
             </p>
             <h1 className="mb-6 font-serif text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl">
@@ -112,7 +112,7 @@ export default function AboutPage() {
       <section className="bg-card py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
               Leadership
             </p>
             <h2 className="mb-6 font-serif text-3xl font-bold text-foreground md:text-4xl">
@@ -158,7 +158,7 @@ export default function AboutPage() {
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
               Behind the Scenes
             </p>
             <h2 className="mb-6 font-serif text-3xl font-bold text-foreground md:text-4xl">

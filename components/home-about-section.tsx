@@ -15,13 +15,13 @@ export function HomeAboutSection() {
       <div className="mx-auto max-w-7xl px-6">
         {/* Section heading */}
         <div className="mb-16 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
             November 6-7, 2026
           </p>
           <h2 className="mb-6 text-balance font-serif text-4xl font-bold text-foreground md:text-5xl">
             The 1st Moraitis Model United Nations
           </h2>
-          <div className="mx-auto h-1 w-16 bg-accent" />
+          <div className="mx-auto h-1 w-16 bg-primary" />
         </div>
 
         {/* Brief intro */}
@@ -61,7 +61,7 @@ export function HomeAboutSection() {
               key={stat.label}
               className="flex flex-col items-center rounded-lg border border-border bg-card p-8 text-center"
             >
-              <stat.icon className="mb-4 h-8 w-8 text-accent" />
+              <stat.icon className="mb-4 h-8 w-8 text-primary" />
               <span className="mb-1 font-serif text-3xl font-bold text-foreground">
                 {stat.value}
               </span>
