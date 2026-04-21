@@ -3,7 +3,7 @@ import { Globe, Users, BookOpen, Calendar, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const stats = [
-  { icon: Globe, label: "Countries Represented", value: "30+" },
+  { icon: Globe, label: "Countries Represented", value: "90+" },
   { icon: Users, label: "Delegates Expected", value: "250+" },
   { icon: BookOpen, label: "Committees", value: "9" },
   { icon: Calendar, label: "Days of Debate", value: "2" },
