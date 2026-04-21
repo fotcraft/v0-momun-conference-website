@@ -50,7 +50,7 @@ const secretariat = [
   },
   {
     position: "Deputy President of the General Assembly",
-    name: "Panagiotis Malioglou",
+    name: "Panagiotis Manologlou",
     abbreviation: "DPGA",
     photo: null,
   },
