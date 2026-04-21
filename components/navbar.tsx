@@ -10,19 +10,25 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-  DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu"
 
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Secretariat", href: "#secretariat" },
-  { label: "Committees", href: "#committees" },
-  { label: "Venue", href: "#venue" },
+const mainNavLinks = [
+  { label: "About", href: "/about" },
+  { label: "1st MoMUN", href: "/first-momun" },
+  { label: "Agenda", href: "/agenda" },
+  { label: "Programme", href: "/programme" },
 ]
 
-const registerLinks = [
-  { label: "School Registration", href: "/register/school", description: "Register your school delegation" },
-  { label: "Individual Registration", href: "/register/individual", description: "Register as an independent delegate" },
+const registrationLinks = [
+  { label: "Registration Guide", href: "/register/guide" },
+  { label: "School Registration", href: "/register/school" },
+  { label: "Student Officer Applications", href: "/apply/chair" },
+]
+
+const infoLinks = [
+  { label: "Manuals", href: "/info/manuals" },
+  { label: "Travel & Accommodation", href: "/info/travel" },
+  { label: "Contact", href: "/contact" },
 ]
 
 export function Navbar() {
@@ -58,54 +64,69 @@ export function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
+        <ul className="hidden items-center gap-1 lg:flex">
+          {mainNavLinks.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
-                className="text-sm font-medium tracking-wide text-primary-foreground/80 transition-colors hover:text-primary-foreground"
+                className="rounded-md px-3 py-2 text-sm font-medium tracking-wide text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
 
-          {/* Chair Application */}
-          <li>
-            <Link
-              href="/apply/chair"
-              className="text-sm font-medium tracking-wide text-primary-foreground/80 transition-colors hover:text-primary-foreground"
-            >
-              Chair Application
-            </Link>
-          </li>
-
-          {/* Register Dropdown */}
+          {/* Registration Dropdown */}
           <li>
             <DropdownMenu>
-              <DropdownMenuTrigger className="rounded-md bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90 flex items-center gap-1">
-                Register <ChevronDown className="h-4 w-4" />
+              <DropdownMenuTrigger className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium tracking-wide text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground">
+                Registration <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56">
-                <DropdownMenuLabel>Delegate Registration</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                {registerLinks.map((link) => (
+                {registrationLinks.map((link) => (
                   <DropdownMenuItem key={link.href} asChild>
-                    <Link href={link.href} className="flex flex-col items-start">
-                      <span className="font-medium">{link.label}</span>
-                      <span className="text-xs text-muted-foreground">{link.description}</span>
-                    </Link>
+                    <Link href={link.href}>{link.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link href="/country-list">Country List</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </li>
+
+          {/* Information Dropdown */}
+          <li>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium tracking-wide text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground">
+                Information <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                {infoLinks.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <Link href={link.href}>{link.label}</Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+          </li>
+
+          {/* Contact CTA */}
+          <li className="ml-2">
+            <Link
+              href="/contact"
+              className="rounded-md bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+            >
+              Contact Us
+            </Link>
           </li>
         </ul>
 
         {/* Mobile toggle */}
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="text-primary-foreground md:hidden"
+          className="text-primary-foreground lg:hidden"
           aria-label="Toggle menu"
         >
           {isMobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -114,35 +135,25 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {isMobileOpen && (
-        <div className="border-t border-primary-foreground/10 bg-primary/95 backdrop-blur-md md:hidden">
+        <div className="border-t border-primary-foreground/10 bg-primary/95 backdrop-blur-md lg:hidden max-h-[80vh] overflow-y-auto">
           <ul className="flex flex-col gap-1 px-6 py-4">
-            {navLinks.map((link) => (
+            {mainNavLinks.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   onClick={() => setIsMobileOpen(false)}
                   className="block rounded-md px-4 py-3 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
             
-            <li>
-              <Link
-                href="/apply/chair"
-                onClick={() => setIsMobileOpen(false)}
-                className="block rounded-md px-4 py-3 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
-              >
-                Chair Application
-              </Link>
-            </li>
-
             <li className="pt-2">
               <p className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground/50">
-                Register
+                Registration
               </p>
-              {registerLinks.map((link) => (
+              {registrationLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -152,6 +163,39 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <Link
+                href="/country-list"
+                onClick={() => setIsMobileOpen(false)}
+                className="block rounded-md px-4 py-3 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              >
+                Country List
+              </Link>
+            </li>
+
+            <li className="pt-2">
+              <p className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground/50">
+                Information
+              </p>
+              {infoLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileOpen(false)}
+                  className="block rounded-md px-4 py-3 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </li>
+
+            <li className="pt-4">
+              <Link
+                href="/contact"
+                onClick={() => setIsMobileOpen(false)}
+                className="block rounded-md bg-accent px-4 py-3 text-center text-sm font-semibold text-accent-foreground"
+              >
+                Contact Us
+              </Link>
             </li>
           </ul>
         </div>

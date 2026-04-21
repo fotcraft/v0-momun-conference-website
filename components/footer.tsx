@@ -1,18 +1,16 @@
 import Image from "next/image"
 
 const quickLinks = [
-  { label: "About", href: "#about" },
-  { label: "Committees", href: "#committees" },
-  { label: "Schedule", href: "#schedule" },
-  { label: "Venue", href: "#venue" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/about" },
+  { label: "1st MoMUN", href: "/first-momun" },
+  { label: "Agenda", href: "/agenda" },
+  { label: "Contact", href: "/contact" },
 ]
 
 const resources = [
-  { label: "Rules of Procedure", href: "#" },
-  { label: "Study Guides", href: "#" },
-  { label: "Delegate Handbook", href: "#" },
-  { label: "Position Papers", href: "#" },
+  { label: "Registration Guide", href: "/register/guide" },
+  { label: "Delegate Manual", href: "/info/manuals" },
+  { label: "Country List", href: "/country-list" },
 ]
 
 export function Footer() {
@@ -86,8 +84,10 @@ export function Footer() {
               Contact
             </h4>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <p>momun@moraitis.edu.gr</p>
-              <p>+30 210 6798100</p>
+              <p>eflerianos@moraitis.edu.gr</p>
+              <p>+30 210 679 5000</p>
+              <p>Al. Papanastasiou & Ag. Dimitriou</p>
+              <p>Psychiko (154 52), Athens</p>
               <a
                 href="https://moraitis.edu.gr"
                 target="_blank"
@@ -105,7 +105,7 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 sm:flex-row">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} MoMUN - Moraitis Model United Nations. All rights reserved.
+            &copy; MoMUN, 2026 - The Moraitis School. All Rights Reserved.
           </p>
           <p className="text-xs text-muted-foreground">
             Moraitis School &middot; Est. 1936 &middot; Athens, Greece

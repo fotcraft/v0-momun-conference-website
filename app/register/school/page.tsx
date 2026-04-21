@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle } from "lucide-react"
+import { ArrowLeft, CheckCircle, AlertCircle } from "lucide-react"
 
 export default function SchoolRegistrationPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -87,6 +87,29 @@ export default function SchoolRegistrationPage() {
       </header>
 
       <main className="mx-auto max-w-4xl px-4 py-8">
+        {/* Important Notice */}
+        <div className="mb-6 rounded-lg border border-accent/30 bg-accent/5 p-4">
+          <div className="flex gap-3">
+            <AlertCircle className="h-5 w-5 shrink-0 text-accent" />
+            <div>
+              <h3 className="mb-1 font-semibold text-foreground">
+                Before You Register
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Please read the{" "}
+                <Link href="/register/guide" className="font-medium text-accent hover:underline">
+                  Registration Guide
+                </Link>{" "}
+                and review the{" "}
+                <Link href="/country-list" className="font-medium text-accent hover:underline">
+                  Country List
+                </Link>{" "}
+                before submitting your registration.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <Card>
           <CardHeader>
             <CardTitle className="text-2xl text-primary">School Registration</CardTitle>
