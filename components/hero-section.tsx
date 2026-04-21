@@ -13,7 +13,7 @@ export function HeroSection() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-primary/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/80 to-primary/90" />
       </div>
 
       {/* Content */}
