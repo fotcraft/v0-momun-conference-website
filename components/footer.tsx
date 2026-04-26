@@ -83,7 +83,7 @@ export function Footer() {
               Contact
             </h4>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <p>eflerianos@moraitis.edu.gr</p>
+              <p>mun@moraitis.edu.gr</p>
               <p>+30 210 679 5000</p>
               <p>Al. Papanastasiou & Ag. Dimitriou</p>
               <p>Psychiko (154 52), Athens</p>

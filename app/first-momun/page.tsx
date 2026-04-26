@@ -237,11 +237,6 @@ export default function FirstMoMUNPage() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" className="border border-white/50 bg-transparent text-white hover:bg-white/10">
-              <Link href="/register/school">
-                School Registration
-              </Link>
-            </Button>
           </div>
         </div>
       </section>

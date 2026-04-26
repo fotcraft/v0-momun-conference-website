@@ -21,7 +21,6 @@ const mainNavLinks = [
 
 const registrationLinks = [
   { label: "Registration Guide", href: "/register/guide" },
-  { label: "School Registration", href: "/register/school" },
   { label: "Student Officer Applications", href: "/apply/chair" },
 ]
 

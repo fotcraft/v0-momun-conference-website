@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const deadlines = [
   { date: "April 24 – May 9, 2026", event: "Student Officer Applications", status: "soon" },
-  { date: "April 24 – September 4, 2026", event: "Form I (School Registration)", status: "upcoming" },
+  { date: "April 27 – September 4, 2026", event: "Form I (School Registration)", status: "upcoming" },
   { date: "September 10 – October 9, 2026", event: "Form II (Delegate Assignment)", status: "upcoming" },
   { date: "September 14 – October 9, 2026", event: "Individual Delegate Registration", status: "upcoming" },
 ]
@@ -52,14 +52,9 @@ export default function RegistrationGuidePage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button asChild>
-              <Link href="/register/school">
-                School Registration
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild className="border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
               <Link href="/country-list">
                 View Country List
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button asChild className="border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
@@ -200,8 +195,8 @@ export default function RegistrationGuidePage() {
             </p>
             <p className="text-sm text-muted-foreground">
               For payment-related inquiries, please contact us at{" "}
-              <a href="mailto:eflerianos@moraitis.edu.gr" className="text-accent hover:underline">
-                eflerianos@moraitis.edu.gr
+              <a href="mailto:mun@moraitis.edu.gr" className="text-accent hover:underline">
+                mun@moraitis.edu.gr
               </a>
             </p>
           </div>
@@ -265,14 +260,9 @@ export default function RegistrationGuidePage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button asChild size="lg" variant="secondary">
-              <Link href="/register/school">
-                School Registration
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild size="lg" className="border border-white/50 bg-transparent text-white hover:bg-white/10">
               <Link href="/apply/chair">
                 Student Officer Applications
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>

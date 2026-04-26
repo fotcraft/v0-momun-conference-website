@@ -208,9 +208,6 @@ export default function AgendaPage() {
             <Button asChild>
               <Link href="/register/guide">Registration Guide</Link>
             </Button>
-            <Button asChild className="border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
-              <Link href="/register/school">School Registration</Link>
-            </Button>
           </div>
         </div>
       </section>

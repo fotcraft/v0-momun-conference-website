@@ -89,7 +89,7 @@ export default function ContactPage() {
                     <Mail className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                     <div>
                       <p className="font-medium text-foreground">Email</p>
-                      <p className="text-sm text-muted-foreground">eflerianos@moraitis.edu.gr</p>
+                      <p className="text-sm text-muted-foreground">mun@moraitis.edu.gr</p>
                     </div>
                   </div>
 
