@@ -22,13 +22,12 @@ export function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-4 flex items-center gap-3">
               <Image
-                src="/images/moraitis-logo.png"
-                alt="Moraitis School Logo"
-                width={40}
-                height={40}
-                className="h-10 w-auto"
+                src="/images/momun-logo.png"
+                alt="MoMUN - The Moraitis School"
+                width={200}
+                height={100}
+                className="h-12 w-auto"
               />
-              <span className="text-lg font-bold text-foreground">MoMUN 2026</span>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
               The Moraitis Model United Nations Conference. Organized by
