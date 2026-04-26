@@ -17,10 +17,7 @@ const deadlines = [
   { date: "September 14 – October 9, 2026", event: "Individual Delegate Registration", status: "upcoming" },
 ]
 
-const fees = [
-  { category: "Delegate fee", amount: "TBA", note: "To be announced" },
-  { category: "Faculty Advisor", amount: "Free", note: "One per school" },
-]
+const fees: { category: string; amount: string; note: string }[] = []
 
 export default function RegistrationGuidePage() {
   return (
@@ -136,42 +133,12 @@ export default function RegistrationGuidePage() {
             </h2>
           </div>
 
-          <div className="overflow-hidden rounded-lg border border-border">
-            <table className="w-full">
-              <thead className="bg-muted">
-                <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">
-                    Category
-                  </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">
-                    Amount
-                  </th>
-                  <th className="hidden px-6 py-4 text-left text-sm font-semibold text-foreground sm:table-cell">
-                    Note
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-background">
-                {fees.map((fee, index) => (
-                  <tr key={index} className="border-t border-border">
-                    <td className="px-6 py-4 text-sm text-foreground">
-                      {fee.category}
-                    </td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">
-                      {fee.amount}
-                    </td>
-                    <td className="hidden px-6 py-4 text-sm text-muted-foreground sm:table-cell">
-                      {fee.note}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="rounded-lg border border-border bg-card p-8 text-center">
+            <p className="text-lg font-semibold text-foreground">To Be Announced</p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Fee details will be published closer to the registration opening date.
+            </p>
           </div>
-
-          <p className="mt-4 text-sm text-muted-foreground">
-            * Fees include conference materials, meals during the conference, and a delegate certificate.
-          </p>
         </div>
       </section>
 
