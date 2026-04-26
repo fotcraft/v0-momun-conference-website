@@ -10,6 +10,7 @@ const quickLinks = [
 const resources = [
   { label: "Registration Guide", href: "/register/guide" },
   { label: "Country List", href: "/country-list" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ]
 
 export function Footer() {

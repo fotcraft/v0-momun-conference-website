@@ -14,7 +14,6 @@ const committees = [
   {
     abbreviation: "GA1",
     name: "General Assembly First Committee",
-    rsm: "Babalis, Manoglou",
     topics: [
       "Assessing the implications of drone warfare for asymmetric conflict in the Red Sea",
       "Preventing the use of critical infrastructure sabotage as a means of coercion",
@@ -24,7 +23,6 @@ const committees = [
   {
     abbreviation: "GA3",
     name: "General Assembly Third Committee",
-    rsm: "Komondouros",
     topics: [
       "Addressing the cultural assimilation of marginalised refugee communities",
       "Combatting honour-based abuse and killings and ensuring the protection of victims",
@@ -34,7 +32,6 @@ const committees = [
   {
     abbreviation: "GA4",
     name: "General Assembly Fourth Committee",
-    rsm: "Komondouros",
     topics: [
       "Ensuring stability in regions affected by protracted and frozen conflicts",
       "The situation in Nakhchivan",
@@ -44,7 +41,6 @@ const committees = [
   {
     abbreviation: "GA6",
     name: "General Assembly Sixth Committee",
-    rsm: "Manoglou",
     topics: [
       "Clarifying the limits of self-defense under the UN Charter in contemporary conflicts",
       "Defining the scope of digital sovereignty under international law",
@@ -54,7 +50,6 @@ const committees = [
   {
     abbreviation: "SC",
     name: "Security Council",
-    rsm: "Babalis",
     topics: [
       "Maintaining peace and security in the Strait of Hormuz during periods of heightened tensions",
       "(open)",
@@ -64,7 +59,6 @@ const committees = [
   {
     abbreviation: "ECOSOC",
     name: "Economic and Social Council",
-    rsm: "Fotiadis",
     topics: [
       "Addressing the economic implications of illegal oil transfers in the South China Sea",
       "Balancing economic feasibility and environmental sustainability in the adoption of next-generation nuclear energy technologies",
@@ -75,7 +69,6 @@ const committees = [
   {
     abbreviation: "HRC",
     name: "Human Rights Council",
-    rsm: "Piperaki",
     topics: [
       "Ensuring protection against discrimination based on sexual orientation while upholding international human rights obligations",
       "Eradicating human trafficking networks through international cooperation",
@@ -86,7 +79,6 @@ const committees = [
   {
     abbreviation: "WB",
     name: "World Bank",
-    rsm: "Piperaki",
     topics: [
       "Expanding financial inclusion through digital infrastructure in developing states",
       "Investing in resilient healthcare systems to mitigate future pandemic risks",
@@ -96,7 +88,6 @@ const committees = [
   {
     abbreviation: "UNESCO",
     name: "UN Educational, Scientific and Cultural Organization",
-    rsm: "Fotiadis",
     topics: [
       "Mitigating anthropogenic degradation of cultural heritage sites",
       "Addressing the exclusion of scientific theories from national education curricula due to cultural and ideological factors",
@@ -151,13 +142,10 @@ export default function AgendaPage() {
                       {committee.abbreviation}
                     </div>
                     <div className="flex-1">
-                      <div className="mb-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <div className="mb-3">
                         <h3 className="font-serif text-xl font-bold text-foreground">
                           {committee.name}
                         </h3>
-                        <span className="text-sm text-muted-foreground">
-                          RSM: {committee.rsm}
-                        </span>
                       </div>
                       <ul className="flex flex-col gap-2">
                         {committee.topics.map((topic, i) => (

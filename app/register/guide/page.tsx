@@ -11,16 +11,14 @@ export const metadata: Metadata = {
 }
 
 const deadlines = [
-  { date: "April 24 – May 9, 2026", event: "Student Officer Applications", status: "soon" },
+  { date: "April 26 – May 9, 2026", event: "Student Officer Applications", status: "soon" },
   { date: "April 27 – September 4, 2026", event: "Form I (School Registration)", status: "upcoming" },
   { date: "September 10 – October 9, 2026", event: "Form II (Delegate Assignment)", status: "upcoming" },
   { date: "September 14 – October 9, 2026", event: "Individual Delegate Registration", status: "upcoming" },
 ]
 
 const fees = [
-  { category: "Early Bird (per delegate)", amount: "TBD", note: "Until October 1" },
-  { category: "Regular (per delegate)", amount: "TBD", note: "October 2–15" },
-  { category: "Late Registration (per delegate)", amount: "TBD", note: "October 16–25" },
+  { category: "Delegate fee", amount: "TBA", note: "To be announced" },
   { category: "Faculty Advisor", amount: "Free", note: "One per school" },
 ]
 

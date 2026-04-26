@@ -52,7 +52,7 @@ const secretariat = [
     position: "Deputy President of the General Assembly",
     name: "Panagiotis Manologlou",
     abbreviation: "DPGA",
-    photo: null,
+    photo: "/images/secretariat/panagiotis-manologlou.jpg",
   },
 ]
 
