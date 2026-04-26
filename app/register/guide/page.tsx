@@ -52,14 +52,9 @@ export default function RegistrationGuidePage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button asChild>
-              <Link href="/register/school">
-                School Registration
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild className="border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
               <Link href="/country-list">
                 View Country List
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button asChild className="border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
@@ -265,14 +260,9 @@ export default function RegistrationGuidePage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button asChild size="lg" variant="secondary">
-              <Link href="/register/school">
-                School Registration
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild size="lg" className="border border-white/50 bg-transparent text-white hover:bg-white/10">
               <Link href="/apply/chair">
                 Student Officer Applications
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>

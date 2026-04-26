@@ -260,11 +260,6 @@ export default function CountryListPage() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild className="border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
-              <Link href="/register/school">
-                School Registration
-              </Link>
-            </Button>
           </div>
         </div>
       </section>
