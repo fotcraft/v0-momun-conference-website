@@ -15,7 +15,10 @@ export const metadata: Metadata = {
   description: 'Join the Moraitis Model United Nations Conference on October 31 - November 1, 2026. Hosted by Moraitis School, Athens, Greece. Diplomacy, debate, and global awareness.',
   generator: 'v0.app',
   icons: {
-    icon: '/images/momun-logo.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/images/momun-logo.png', type: 'image/png' },
+    ],
     apple: '/images/momun-logo.png',
   },
 }
