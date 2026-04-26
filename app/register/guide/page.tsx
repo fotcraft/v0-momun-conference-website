@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const deadlines = [
   { date: "April 24 – May 9, 2026", event: "Student Officer Applications", status: "soon" },
-  { date: "April 24 – September 4, 2026", event: "Form I (School Registration)", status: "upcoming" },
+  { date: "April 27 – September 4, 2026", event: "Form I (School Registration)", status: "upcoming" },
   { date: "September 10 – October 9, 2026", event: "Form II (Delegate Assignment)", status: "upcoming" },
   { date: "September 14 – October 9, 2026", event: "Individual Delegate Registration", status: "upcoming" },
 ]
@@ -200,8 +200,8 @@ export default function RegistrationGuidePage() {
             </p>
             <p className="text-sm text-muted-foreground">
               For payment-related inquiries, please contact us at{" "}
-              <a href="mailto:eflerianos@moraitis.edu.gr" className="text-accent hover:underline">
-                eflerianos@moraitis.edu.gr
+              <a href="mailto:mun@moraitis.edu.gr" className="text-accent hover:underline">
+                mun@moraitis.edu.gr
               </a>
             </p>
           </div>
