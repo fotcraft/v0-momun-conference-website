@@ -50,15 +50,12 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/images/moraitis-logo.png"
-            alt="Moraitis School Logo"
-            width={44}
-            height={44}
-            className="h-11 w-auto"
+            src="/images/momun-logo.png"
+            alt="MoMUN - The Moraitis School"
+            width={160}
+            height={80}
+            className="h-10 w-auto mix-blend-multiply"
           />
-          <span className="text-lg font-bold tracking-wide text-primary-foreground">
-            MoMUN 2026
-          </span>
         </Link>
 
         {/* Desktop nav */}
