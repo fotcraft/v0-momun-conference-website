@@ -69,9 +69,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
-      { url: '/images/momun-logo.png', type: 'image/png' },
+      { url: '/images/favicon-head.jpg', type: 'image/jpeg' },
     ],
-    apple: '/images/momun-logo.png',
+    apple: '/images/favicon-head.jpg',
   },
 }
 
