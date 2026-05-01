@@ -153,17 +153,27 @@ export default function RegistrationGuidePage() {
           </div>
 
           <div className="rounded-lg border border-border bg-card p-6">
-            <p className="mb-4 text-muted-foreground">
-              Payment details and bank account information will be provided upon 
-              acceptance of your registration. Please ensure all payments are made 
-              within the specified deadlines.
+            <p className="mb-6 text-muted-foreground">
+              Please review the Payment Information document below for full details on fees, bank account information, and payment deadlines.
             </p>
-            <p className="text-sm text-muted-foreground">
-              For payment-related inquiries, please contact us at{" "}
-              <a href="mailto:mun@moraitis.edu.gr" className="text-accent hover:underline">
-                mun@moraitis.edu.gr
-              </a>
-            </p>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <Button asChild>
+                <a
+                  href="https://moraitis-my.sharepoint.com/:b:/g/personal/eflerianos_moraitis_edu_gr/IQANvKOuYwuAQ7qn-bW9Z4QJAQ1a1Lov6Sl2Cw19hnnJaJA?e=3e65Q2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FileText className="mr-2 h-4 w-4" />
+                  View Payment Information
+                </a>
+              </Button>
+              <p className="text-sm text-muted-foreground">
+                For inquiries:{" "}
+                <a href="mailto:mun@moraitis.edu.gr" className="text-accent hover:underline">
+                  mun@moraitis.edu.gr
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </section>

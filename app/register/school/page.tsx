@@ -47,7 +47,22 @@ export default function SchoolRegistrationPage() {
             />
           </div>
 
-          <p className="mt-6 text-center text-sm text-muted-foreground">
+          <div className="mt-8 rounded-lg border border-border bg-card p-6">
+            <h3 className="mb-2 font-semibold text-foreground">Payment Information</h3>
+            <p className="mb-4 text-sm text-muted-foreground">
+              Before submitting, please review the payment details document for fee amounts and bank account information.
+            </p>
+            <a
+              href="https://moraitis-my.sharepoint.com/:b:/g/personal/eflerianos_moraitis_edu_gr/IQANvKOuYwuAQ7qn-bW9Z4QJAQ1a1Lov6Sl2Cw19hnnJaJA?e=3e65Q2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
+            >
+              View Payment Information
+            </a>
+          </div>
+
+          <p className="mt-4 text-center text-sm text-muted-foreground">
             Having trouble with the form?{" "}
             <a
               href="https://forms.cloud.microsoft/e/KiPu7NHsDt"
