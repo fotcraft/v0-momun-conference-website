@@ -15,6 +15,7 @@ import {
 const mainNavLinks = [
   { label: "About", href: "/about" },
   { label: "1st MoMUN", href: "/first-momun" },
+  { label: "Student Officers", href: "/first-momun/student-officers" },
   { label: "Agenda", href: "/agenda" },
   { label: "Programme", href: "/programme" },
 ]

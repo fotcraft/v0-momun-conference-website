@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const committees = [
   {
     abbreviation: "GA1",
-    name: "General Assembly First Committee",
+    name: "Disarmament and International Security Committee",
     topics: [
       "Assessing the implications of drone warfare for asymmetric conflict in the Red Sea",
       "Preventing the use of critical infrastructure sabotage as a means of coercion",
@@ -22,7 +22,7 @@ const committees = [
   },
   {
     abbreviation: "GA3",
-    name: "General Assembly Third Committee",
+    name: "Social, Humanitarian and Cultural Committee",
     topics: [
       "Addressing the cultural assimilation of marginalised refugee communities",
       "Combatting honour-based abuse and killings and ensuring the protection of victims",
@@ -31,7 +31,7 @@ const committees = [
   },
   {
     abbreviation: "GA4",
-    name: "General Assembly Fourth Committee",
+    name: "Special Political and Decolonization Committee",
     topics: [
       "Ensuring stability in regions affected by protracted and frozen conflicts",
       "The situation in Nakhchivan",
@@ -40,7 +40,7 @@ const committees = [
   },
   {
     abbreviation: "GA6",
-    name: "General Assembly Sixth Committee",
+    name: "Legal Committee",
     topics: [
       "Clarifying the limits of self-defense under the UN Charter in contemporary conflicts",
       "Defining the scope of digital sovereignty under international law",

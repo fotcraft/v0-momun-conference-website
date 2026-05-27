@@ -10,12 +10,53 @@ export const metadata: Metadata = {
   description: "Everything you need to know about registering for MoMUN 2026 - deadlines, fees, and requirements.",
 }
 
-const deadlines = [
-  { date: "April 26 – May 9, 2026", event: "Student Officer Applications", status: "soon" },
-  { date: "April 27 – September 4, 2026", event: "Form I (School Registration)", status: "upcoming" },
-  { date: "September 10 – October 9, 2026", event: "Form II (Delegate Assignment)", status: "upcoming" },
-  { date: "September 14 – October 9, 2026", event: "Individual Delegate Registration", status: "upcoming" },
+type DeadlineStatus = "open" | "closed" | "upcoming" | "closing-soon"
+
+interface Deadline {
+  startDate: Date
+  endDate: Date
+  event: string
+  href?: string
+}
+
+const deadlineData: Deadline[] = [
+  {
+    startDate: new Date("2026-04-26"),
+    endDate: new Date("2026-05-09"),
+    event: "Student Officer Applications",
+    href: "/apply/chair",
+  },
+  {
+    startDate: new Date("2026-04-27"),
+    endDate: new Date("2026-09-04"),
+    event: "Form I (School Registration)",
+    href: "/register/school",
+  },
+  {
+    startDate: new Date("2026-09-10"),
+    endDate: new Date("2026-10-09"),
+    event: "Form II (Delegate Assignment)",
+  },
+  {
+    startDate: new Date("2026-09-14"),
+    endDate: new Date("2026-10-09"),
+    event: "Individual Delegate Registration",
+  },
 ]
+
+function getStatus(start: Date, end: Date): DeadlineStatus {
+  const now = new Date()
+  const daysUntilEnd = (end.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)
+  if (now < start) return "upcoming"
+  if (now > end) return "closed"
+  if (daysUntilEnd <= 7) return "closing-soon"
+  return "open"
+}
+
+function formatDateRange(start: Date, end: Date): string {
+  const opts: Intl.DateTimeFormatOptions = { month: "long", day: "numeric", year: "numeric" }
+  return `${start.toLocaleDateString("en-GB", opts)} – ${end.toLocaleDateString("en-GB", opts)}`
+}
 
 const fees: { category: string; amount: string; note: string }[] = []
 
@@ -96,29 +137,67 @@ export default function RegistrationGuidePage() {
           </div>
 
           <div className="flex flex-col gap-4">
-            {deadlines.map((item, index) => (
-              <div
-                key={index}
-                className={`flex flex-col gap-2 rounded-lg border p-4 sm:flex-row sm:items-center sm:justify-between ${
-                  item.status === "soon"
-                    ? "border-accent/50 bg-accent/10"
-                    : "border-border bg-card"
-                }`}
-              >
-                <div className="flex items-center gap-4">
-                  <div className={`h-3 w-3 rounded-full ${item.status === "soon" ? "bg-accent" : "bg-muted-foreground/40"}`} />
-                  <span className="font-medium text-foreground">{item.event}</span>
-                  {item.status === "soon" && (
-                    <span className="rounded-full bg-accent px-2 py-0.5 text-xs font-semibold text-accent-foreground">
-                      Closing Soon
+            {deadlineData.map((item, index) => {
+              const status = getStatus(item.startDate, item.endDate)
+              const isOpen = status === "open"
+              const isClosingSoon = status === "closing-soon"
+              const isClosed = status === "closed"
+              const isActive = isOpen || isClosingSoon
+              return (
+                <div
+                  key={index}
+                  className={`flex flex-col gap-2 rounded-lg border p-4 sm:flex-row sm:items-center sm:justify-between ${
+                    isClosingSoon
+                      ? "border-orange-400/50 bg-orange-50 dark:bg-orange-950/20"
+                      : isOpen
+                      ? "border-primary/40 bg-primary/5"
+                      : isClosed
+                      ? "border-border bg-muted/30 opacity-60"
+                      : "border-border bg-card"
+                  }`}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className={`h-3 w-3 rounded-full ${
+                      isClosingSoon ? "bg-orange-500" :
+                      isOpen ? "bg-primary" :
+                      isClosed ? "bg-muted-foreground/30" :
+                      "bg-muted-foreground/40"
+                    }`} />
+                    <span className={`font-medium ${isClosed ? "text-muted-foreground line-through" : "text-foreground"}`}>
+                      {item.event}
                     </span>
-                  )}
+                    {isClosingSoon && (
+                      <span className="rounded-full bg-orange-500 px-2 py-0.5 text-xs font-semibold text-white">
+                        Closing Soon
+                      </span>
+                    )}
+                    {isOpen && (
+                      <span className="rounded-full bg-primary px-2 py-0.5 text-xs font-semibold text-primary-foreground">
+                        Open
+                      </span>
+                    )}
+                    {isClosed && (
+                      <span className="rounded-full bg-muted px-2 py-0.5 text-xs font-semibold text-muted-foreground">
+                        Closed
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-3 pl-7 sm:pl-0">
+                    <span className={`text-sm ${isActive ? "font-semibold text-primary" : "text-muted-foreground"}`}>
+                      {formatDateRange(item.startDate, item.endDate)}
+                    </span>
+                    {isActive && item.href && (
+                      <a
+                        href={item.href}
+                        className="text-xs font-semibold text-primary underline underline-offset-2 hover:opacity-80"
+                      >
+                        Apply Now
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <span className={`pl-7 text-sm sm:pl-0 ${item.status === "soon" ? "font-semibold text-accent" : "text-muted-foreground"}`}>
-                  {item.date}
-                </span>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
