@@ -12,15 +12,15 @@ export const metadata: Metadata = {
 }
 
 const committees = [
-  { name: "General Assembly First Committee", abbreviation: "GA 1" },
-  { name: "General Assembly Third Committee", abbreviation: "GA 3" },
-  { name: "General Assembly Fourth Committee", abbreviation: "GA 4" },
-  { name: "General Assembly Sixth Committee", abbreviation: "GA 6" },
+  { name: "Disarmament and International Security Committee", abbreviation: "GA1" },
+  { name: "Social, Humanitarian and Cultural Committee", abbreviation: "GA3" },
+  { name: "Special Political and Decolonization Committee", abbreviation: "GA4" },
+  { name: "Legal Committee", abbreviation: "GA6" },
   { name: "Economic and Social Council", abbreviation: "ECOSOC" },
   { name: "Security Council", abbreviation: "SC" },
   { name: "World Health Organization", abbreviation: "WHO" },
   { name: "World Bank", abbreviation: "WB" },
-  { name: "UNESCO", abbreviation: "UNESCO" },
+  { name: "UN Educational, Scientific and Cultural Organization", abbreviation: "UNESCO" },
 ]
 
 const secretariat = [
@@ -165,11 +165,16 @@ export default function FirstMoMUNPage() {
             ))}
           </div>
 
-          <div className="mt-8 text-center">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Button asChild>
               <Link href="/agenda">
                 View Full Agenda & Study Guides
                 <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild className="border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
+              <Link href="/first-momun/student-officers">
+                Meet the Student Officers
               </Link>
             </Button>
           </div>
