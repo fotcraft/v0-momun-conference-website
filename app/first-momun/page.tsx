@@ -40,7 +40,7 @@ const secretariat = [
     position: "President of the General Assembly",
     name: "Aggelos Komondouros",
     abbreviation: "PGA",
-    photo: null,
+    photo: "/images/secretariat/aggelos-komondouros.jpg",
   },
   {
     position: "Deputy President of the General Assembly",
