@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { Fragment, useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, X, ChevronDown } from "lucide-react"
@@ -14,16 +14,20 @@ import {
 
 const mainNavLinks = [
   { label: "About", href: "/about" },
-  { label: "1st MoMUN", href: "/first-momun" },
+]
+
+const conferenceLinks = [
+  { label: "Overview", href: "/first-momun" },
+  { label: "Agenda & Study Guides", href: "/agenda" },
   { label: "Student Officers", href: "/first-momun/student-officers" },
-  { label: "Agenda", href: "/agenda" },
   { label: "Programme", href: "/programme" },
 ]
 
 const registrationLinks = [
   { label: "Registration Guide", href: "/register/guide" },
+  { label: "Country List", href: "/country-list" },
   { label: "School Registration (Form I)", href: "/register/school" },
-  { label: "Individual Registration", href: "/register/individual" },
+  { label: "Individual Delegates Registration", href: "/register/individual" },
   { label: "Student Officer Applications", href: "/apply/chair" },
 ]
 
@@ -74,22 +78,37 @@ export function Navbar() {
             </li>
           ))}
 
+          {/* 1st MoMUN Dropdown */}
+          <li>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium tracking-wide text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground">
+                1st MoMUN <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                {conferenceLinks.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <Link href={link.href}>{link.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </li>
+
           {/* Registration Dropdown */}
           <li>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium tracking-wide text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground">
                 Registration <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuContent align="end" className="w-72">
                 {registrationLinks.map((link) => (
-                  <DropdownMenuItem key={link.href} asChild>
-                    <Link href={link.href}>{link.label}</Link>
-                  </DropdownMenuItem>
+                  <Fragment key={link.href}>
+                    <DropdownMenuItem asChild>
+                      <Link href={link.href}>{link.label}</Link>
+                    </DropdownMenuItem>
+                    {link.href === "/country-list" && <DropdownMenuSeparator />}
+                  </Fragment>
                 ))}
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <Link href="/country-list">Country List</Link>
-                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </li>
@@ -149,6 +168,22 @@ export function Navbar() {
             
             <li className="pt-2">
               <p className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground/50">
+                1st MoMUN
+              </p>
+              {conferenceLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileOpen(false)}
+                  className="block rounded-md px-4 py-3 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </li>
+
+            <li className="pt-2">
+              <p className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground/50">
                 Registration
               </p>
               {registrationLinks.map((link) => (
@@ -161,13 +196,6 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/country-list"
-                onClick={() => setIsMobileOpen(false)}
-                className="block rounded-md px-4 py-3 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
-              >
-                Country List
-              </Link>
             </li>
 
             <li className="pt-2">

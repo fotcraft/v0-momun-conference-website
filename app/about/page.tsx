@@ -75,7 +75,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Organising Team Placeholder */}
+      {/* Organising Team */}
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
@@ -87,14 +87,40 @@ export default function AboutPage() {
             </h2>
             <p className="mx-auto max-w-2xl text-muted-foreground">
               Our dedicated organising team works tirelessly to make MoMUN 2026 
-              a memorable experience. Team photos coming soon!
+              a memorable experience.
             </p>
           </div>
 
-          <div className="rounded-lg border-2 border-dashed border-border bg-muted/30 p-16 text-center">
-            <p className="text-lg text-muted-foreground">
-              Team photos will be added soon.
-            </p>
+          <div className="mx-auto grid max-w-[816px] gap-6 sm:grid-cols-2">
+            {[
+              { name: "John Vlastaras", position: "Conference Manager", initials: "JV", photo: null },
+              { name: "Lefteris Flerianos", position: "MUN Advisor", initials: "LF", photo: "/images/organising-team/lefteris-flerianos.jpg" },
+            ].map((member) => (
+              <div
+                key={member.name}
+                className="rounded-lg border border-border bg-card p-8 text-center"
+              >
+                {member.photo ? (
+                  <div className="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-full">
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      width={112}
+                      height={112}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="mx-auto mb-4 flex h-28 w-28 items-center justify-center rounded-full bg-primary text-2xl font-bold text-primary-foreground">
+                    {member.initials}
+                  </div>
+                )}
+                <h3 className="mt-2 font-serif text-xl font-bold text-foreground">
+                  {member.name}
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground">{member.position}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

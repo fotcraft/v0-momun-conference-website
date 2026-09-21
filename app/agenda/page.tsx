@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { FileText, ExternalLink } from "lucide-react"
+import { FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
@@ -15,85 +15,76 @@ const committees = [
     abbreviation: "GA1",
     name: "Disarmament and International Security Committee",
     topics: [
-      "Assessing the implications of drone warfare for asymmetric conflict in the Red Sea",
-      "Preventing the use of critical infrastructure sabotage as a means of coercion",
+      { title: "Assessing the implications of drone warfare for asymmetric conflict in the Red Sea", studyGuideUrl: "#" },
+      { title: "Preventing the use of critical infrastructure sabotage as a means of coercion", studyGuideUrl: "#" },
     ],
-    studyGuideUrl: "#",
   },
   {
     abbreviation: "GA3",
     name: "Social, Humanitarian and Cultural Committee",
     topics: [
-      "Addressing the cultural assimilation of marginalised refugee communities",
-      "Combatting honour-based abuse and killings and ensuring the protection of victims",
+      { title: "Addressing the cultural assimilation of marginalised refugee communities", studyGuideUrl: "#" },
+      { title: "Combatting honour-based abuse and killings and ensuring the protection of victims", studyGuideUrl: "#" },
     ],
-    studyGuideUrl: "#",
   },
   {
     abbreviation: "GA4",
     name: "Special Political and Decolonization Committee",
     topics: [
-      "Ensuring stability in regions affected by protracted and frozen conflicts",
-      "The situation in Nakhchivan",
+      { title: "Ensuring stability in regions affected by protracted and frozen conflicts", studyGuideUrl: "#" },
+      { title: "The situation in Nakhchivan", studyGuideUrl: "#" },
     ],
-    studyGuideUrl: "#",
   },
   {
     abbreviation: "GA6",
     name: "Legal Committee",
     topics: [
-      "Clarifying the limits of self-defense under the UN Charter in contemporary conflicts",
-      "Defining the scope of digital sovereignty under international law",
+      { title: "Clarifying the limits of self-defense under the UN Charter in contemporary conflicts", studyGuideUrl: "#" },
+      { title: "Defining the scope of digital sovereignty under international law", studyGuideUrl: "#" },
     ],
-    studyGuideUrl: "#",
   },
   {
     abbreviation: "SC",
     name: "Security Council",
     topics: [
-      "Maintaining peace and security in the Strait of Hormuz during periods of heightened tensions",
-      "(open)",
+      { title: "Maintaining peace and security in the Strait of Hormuz during periods of heightened tensions", studyGuideUrl: "#" },
+      { title: "Responding to the escalating instability in the Darfur region following the Siege of El Fasher", studyGuideUrl: "#" },
     ],
-    studyGuideUrl: "#",
   },
   {
     abbreviation: "ECOSOC",
     name: "Economic and Social Council",
     topics: [
-      "Addressing the economic implications of illegal oil transfers in the South China Sea",
-      "Balancing economic feasibility and environmental sustainability in the adoption of next-generation nuclear energy technologies",
-      "Promoting efficient management of water resources in regions facing scarcity",
+      { title: "Addressing the economic implications of illegal oil transfers in the South China Sea", studyGuideUrl: "#" },
+      { title: "Balancing economic feasibility and environmental sustainability in the adoption of next-generation nuclear energy technologies", studyGuideUrl: "#" },
+      { title: "Promoting efficient management of water resources in regions facing scarcity", studyGuideUrl: "#" },
     ],
-    studyGuideUrl: "#",
   },
   {
     abbreviation: "HRC",
     name: "Human Rights Council",
     topics: [
-      "Ensuring protection against discrimination based on sexual orientation while upholding international human rights obligations",
-      "Eradicating human trafficking networks through international cooperation",
-      "Ensuring the protection of media workers and journalists in conflict zones",
+      { title: "Ensuring protection against discrimination based on sexual orientation while upholding international human rights obligations", studyGuideUrl: "#" },
+      { title: "Eradicating human trafficking networks through international cooperation", studyGuideUrl: "#" },
+      { title: "Ensuring the protection of media workers and journalists in conflict zones", studyGuideUrl: "#" },
     ],
-    studyGuideUrl: "#",
   },
   {
     abbreviation: "WB",
     name: "World Bank",
     topics: [
-      "Expanding financial inclusion through digital infrastructure in developing states",
-      "Investing in resilient healthcare systems to mitigate future pandemic risks",
+      { title: "Expanding financial inclusion through digital infrastructure in developing states", studyGuideUrl: "#" },
+      { title: "Investing in resilient healthcare systems to mitigate future pandemic risks", studyGuideUrl: "#" },
     ],
-    studyGuideUrl: "#",
   },
   {
     abbreviation: "UNESCO",
     name: "UN Educational, Scientific and Cultural Organization",
     topics: [
-      "Mitigating anthropogenic degradation of cultural heritage sites",
-      "Addressing the exclusion of scientific theories from national education curricula due to cultural and ideological factors",
-      "Balancing globalisation-driven economic development and the preservation of cultural heritage",
+      { title: "Mitigating anthropogenic degradation of cultural heritage sites", studyGuideUrl: "#" },
+      { title: "Addressing the exclusion of scientific theories from national education curricula due to cultural and ideological factors", studyGuideUrl: "#" },
+      { title: "Balancing globalisation-driven economic development and the preservation of cultural heritage", studyGuideUrl: "#" },
     ],
-    studyGuideUrl: "#",
   },
 ]
 
@@ -137,45 +128,40 @@ export default function AgendaPage() {
                 className="rounded-lg border border-border bg-card p-6 md:p-8"
               >
                 <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-                  <div className="flex gap-5">
+                  <div className="flex w-full min-w-0 gap-5">
                     <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
                       {committee.abbreviation}
                     </div>
-                    <div className="flex-1">
+                    <div className="min-w-0 flex-1">
                       <div className="mb-3">
                         <h3 className="font-serif text-xl font-bold text-foreground">
                           {committee.name}
                         </h3>
                       </div>
-                      <ul className="flex flex-col gap-2">
-                        {committee.topics.map((topic, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
-                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                            <span className={topic === "(open)" ? "italic text-muted-foreground" : ""}>
-                              {topic}
+                      <ul className="flex flex-col gap-4">
+                        {committee.topics.map((topic) => (
+                          <li key={topic.title} className="flex items-start gap-3 text-sm text-foreground/80">
+                            <span className="shrink-0" title={topic.studyGuideUrl === "#" ? "Study guide coming soon" : "Open study guide"}>
+                              {topic.studyGuideUrl !== "#" ? (
+                                <Button asChild size="icon" className="h-8 w-8 border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
+                                  <a href={topic.studyGuideUrl} target="_blank" rel="noopener noreferrer" aria-label={`Study Guide: ${topic.title}`}>
+                                    <FileText className="h-4 w-4" aria-hidden="true" />
+                                  </a>
+                                </Button>
+                              ) : (
+                                <Button size="icon" disabled aria-label={`Study Guide coming soon: ${topic.title}`} className="h-8 w-8 border border-border bg-transparent text-muted-foreground">
+                                  <FileText className="h-4 w-4" aria-hidden="true" />
+                                </Button>
+                              )}
                             </span>
+                            <span className="min-w-0 pt-1.5">{topic.title}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                   </div>
 
-                  <div className="shrink-0 md:ml-6">
-                    {committee.studyGuideUrl !== "#" ? (
-                      <Button asChild size="sm" className="border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
-                        <a href={committee.studyGuideUrl} target="_blank" rel="noopener noreferrer">
-                          <FileText className="mr-2 h-4 w-4" />
-                          Study Guide
-                          <ExternalLink className="ml-2 h-3 w-3" />
-                        </a>
-                      </Button>
-                    ) : (
-                      <Button size="sm" disabled className="border border-border bg-transparent text-muted-foreground">
-                        <FileText className="mr-2 h-4 w-4" />
-                        Coming Soon
-                      </Button>
-                    )}
-                  </div>
+
                 </div>
               </div>
             ))}

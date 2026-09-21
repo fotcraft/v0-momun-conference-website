@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { ArrowRight, Calendar, CreditCard, Users, FileText, AlertCircle } from "lucide-react"
+import { ArrowRight, Calendar, Users, FileText, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ const deadlineData: Deadline[] = [
   },
   {
     startDate: new Date("2026-04-27"),
-    endDate: new Date("2026-09-04"),
+    endDate: new Date("2026-09-23"),
     event: "Form I (School Registration)",
     href: "/register/school",
   },
@@ -41,6 +41,7 @@ const deadlineData: Deadline[] = [
     startDate: new Date("2026-09-14"),
     endDate: new Date("2026-10-09"),
     event: "Individual Delegate Registration",
+    href: "/register/individual",
   },
 ]
 
@@ -57,8 +58,6 @@ function formatDateRange(start: Date, end: Date): string {
   const opts: Intl.DateTimeFormatOptions = { month: "long", day: "numeric", year: "numeric" }
   return `${start.toLocaleDateString("en-GB", opts)} – ${end.toLocaleDateString("en-GB", opts)}`
 }
-
-const fees: { category: string; amount: string; note: string }[] = []
 
 export default function RegistrationGuidePage() {
   return (
@@ -148,7 +147,7 @@ export default function RegistrationGuidePage() {
                   key={index}
                   className={`flex flex-col gap-2 rounded-lg border p-4 sm:flex-row sm:items-center sm:justify-between ${
                     isClosingSoon
-                      ? "border-orange-400/50 bg-orange-50 dark:bg-orange-950/20"
+                      ? "border-[#c47b35]/40 bg-[#c47b35]/10"
                       : isOpen
                       ? "border-primary/40 bg-primary/5"
                       : isClosed
@@ -158,17 +157,21 @@ export default function RegistrationGuidePage() {
                 >
                   <div className="flex items-center gap-4">
                     <div className={`h-3 w-3 rounded-full ${
-                      isClosingSoon ? "bg-orange-500" :
+                      isClosingSoon ? "bg-[#c47b35]" :
                       isOpen ? "bg-primary" :
                       isClosed ? "bg-muted-foreground/30" :
                       "bg-muted-foreground/40"
                     }`} />
                     <span className={`font-medium ${isClosed ? "text-muted-foreground line-through" : "text-foreground"}`}>
-                      {item.event}
+                      {isActive && item.href ? (
+                        <Link href={item.href} className="underline underline-offset-4 hover:text-primary">
+                          {item.event}
+                        </Link>
+                      ) : item.event}
                     </span>
                     {isClosingSoon && (
-                      <span className="rounded-full bg-orange-500 px-2 py-0.5 text-xs font-semibold text-white">
-                        Closing Soon
+                      <span className="rounded-full bg-[#c47b35] px-2 py-0.5 text-xs font-semibold text-white">
+                        {item.href === "/register/school" ? "Closes soon" : "Closing Soon"}
                       </span>
                     )}
                     {isOpen && (
@@ -186,37 +189,10 @@ export default function RegistrationGuidePage() {
                     <span className={`text-sm ${isActive ? "font-semibold text-primary" : "text-muted-foreground"}`}>
                       {formatDateRange(item.startDate, item.endDate)}
                     </span>
-                    {isActive && item.href && (
-                      <a
-                        href={item.href}
-                        className="text-xs font-semibold text-primary underline underline-offset-2 hover:opacity-80"
-                      >
-                        Apply Now
-                      </a>
-                    )}
                   </div>
                 </div>
               )
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Fees */}
-      <section className="bg-card py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-12 flex items-center gap-4">
-            <CreditCard className="h-8 w-8 text-accent" />
-            <h2 className="font-serif text-2xl font-bold text-foreground md:text-3xl">
-              Fee Breakdown
-            </h2>
-          </div>
-
-          <div className="rounded-lg border border-border bg-card p-8 text-center">
-            <p className="text-lg font-semibold text-foreground">To Be Announced</p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Fee details will be published closer to the registration opening date.
-            </p>
           </div>
         </div>
       </section>
@@ -227,7 +203,7 @@ export default function RegistrationGuidePage() {
           <div className="mb-12 flex items-center gap-4">
             <FileText className="h-8 w-8 text-accent" />
             <h2 className="font-serif text-2xl font-bold text-foreground md:text-3xl">
-              Payment Information
+              Fees &amp; Payment
             </h2>
           </div>
 
@@ -310,12 +286,18 @@ export default function RegistrationGuidePage() {
             Ready to Register?
           </h2>
           <p className="mb-8 text-primary-foreground/80">
-            Start your school registration or apply to become a Student Officer.
+            Register your school or apply as an individual delegate.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button asChild size="lg" variant="secondary">
-              <Link href="/apply/chair">
-                Student Officer Applications
+              <Link href="/register/school">
+                School Registration (Form I)
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/register/individual">
+                Individual Delegate Registration
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
