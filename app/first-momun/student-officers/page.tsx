@@ -28,7 +28,7 @@ const secretariat = [
     position: "President of the General Assembly",
     name: "Aggelos Komondouros",
     abbreviation: "PGA",
-    photo: null,
+    photo: "/images/secretariat/aggelos-komondouros.png",
   },
   {
     position: "Deputy President of the General Assembly",
@@ -45,15 +45,195 @@ const secretariat = [
 ]
 
 const committees = [
-  { abbreviation: "GA1", name: "Disarmament and International Security Committee", chairs: [] },
-  { abbreviation: "GA3", name: "Social, Humanitarian and Cultural Committee", chairs: [] },
-  { abbreviation: "GA4", name: "Special Political and Decolonization Committee", chairs: [] },
-  { abbreviation: "GA6", name: "Legal Committee", chairs: [] },
-  { abbreviation: "ECOSOC", name: "Economic and Social Council", chairs: [] },
-  { abbreviation: "SC", name: "Security Council", chairs: [] },
-  { abbreviation: "WHO", name: "World Health Organization", chairs: [] },
-  { abbreviation: "WB", name: "World Bank", chairs: [] },
-  { abbreviation: "UNESCO", name: "UN Educational, Scientific and Cultural Organization", chairs: [] },
+  {
+    abbreviation: "GA1",
+    name: "Disarmament and International Security Committee",
+    chairs: [
+      {
+        position: "Chair",
+        name: "Dimitris Flerianos",
+        school: "Erasmios Greek-German School",
+      },
+      {
+        position: "Co-Chair",
+        name: "Ektoras Moysidis",
+        school: "Deutsche Schule Athen",
+      },
+      {
+        position: "Co-Chair",
+        name: "Effrosyni Christidou",
+        school: "Deutsche Schule Athen",
+      },
+    ],
+  },
+  {
+    abbreviation: "GA3",
+    name: "Social, Humanitarian and Cultural Committee",
+    chairs: [
+      {
+        position: "Chair",
+        name: "Dioni Elvira Kalpaka",
+        school: "Costeas-Geitonas School",
+      },
+      {
+        position: "Co-Chair",
+        name: "Katerina Pouli",
+        school: "Geitonas School",
+      },
+      {
+        position: "Co-Chair",
+        name: "Marilou Komninou",
+        school: "Deutsche Schule Athen",
+      },
+    ],
+  },
+  {
+    abbreviation: "GA4",
+    name: "Special Political and Decolonization Committee",
+    chairs: [
+      {
+        position: "Chair",
+        name: "Nikoletta Roussaki",
+        school: "Pierce - The American College of Greece",
+      },
+      {
+        position: "Co-Chair",
+        name: "Petros Papadopoulos",
+        school: "Moraitis School",
+      },
+      {
+        position: "Co-Chair",
+        name: "Alexandros Panagiotopoulos-Vanger",
+        school: "St. Joseph Greek-French School",
+      },
+    ],
+  },
+  {
+    abbreviation: "GA6",
+    name: "Legal Committee",
+    chairs: [
+      {
+        position: "Chair",
+        name: "Stavrina Dimopoulou",
+        school: "Deutsche Schule Athen",
+      },
+      {
+        position: "Co-Chair",
+        name: "Adrianos Prineas",
+        school: "Pierce - The American College of Greece",
+      },
+      {
+        position: "Co-Chair",
+        name: "Sotiria Davaki",
+        school: "HAEF - Psychiko College",
+      },
+    ],
+  },
+  {
+    abbreviation: "SC",
+    name: "Security Council",
+    chairs: [
+      {
+        position: "President",
+        name: "Sofia Vatista",
+        school: "Geitonas School",
+      },
+      {
+        position: "Deputy President",
+        name: "Evangelia Maragkaki",
+        school: "Deutsche Schule Athen",
+      },
+      {
+        position: "Deputy President",
+        name: "Sophia Maria Albani",
+        school: "Politropi School",
+      },
+    ],
+  },
+  {
+    abbreviation: "ECOSOC",
+    name: "Economic and Social Council",
+    chairs: [
+      {
+        position: "President",
+        name: "Konstantinos Grafopoulos",
+        school: "George Zois School",
+      },
+      {
+        position: "Deputy President",
+        name: "Ilias-Romanos Sporidis",
+        school: null,
+      },
+      {
+        position: "Deputy President",
+        name: "Semeli Soulioti",
+        school: "Deutsche Schule Athen",
+      },
+    ],
+  },
+  {
+    abbreviation: "HRC",
+    name: "Human Rights Council",
+    chairs: [
+      {
+        position: "President",
+        name: "Athanasios Theodorou",
+        school: "Platon School",
+      },
+      {
+        position: "Deputy President",
+        name: "Christina Papageorgiou",
+        school: "Geitonas School",
+      },
+      {
+        position: "Deputy President",
+        name: "Panagiotis Kamsaris",
+        school: "1st General Lykeio of Nea Smyrni",
+      },
+    ],
+  },
+  {
+    abbreviation: "WB",
+    name: "World Bank",
+    chairs: [
+      {
+        position: "President",
+        name: "Dimitris Anagnostaras",
+        school: "HAEF - Psychiko College",
+      },
+      {
+        position: "Deputy President",
+        name: "Ari Tingis",
+        school: "St. Catherine's British School",
+      },
+      {
+        position: "Deputy President",
+        name: "Milianna Vengerets",
+        school: "International School of Athens",
+      },
+    ],
+  },
+  {
+    abbreviation: "UNESCO",
+    name: "UN Educational, Scientific and Cultural Organization",
+    chairs: [
+      {
+        position: "President",
+        name: "Emmanuela Tzokas",
+        school: "Costeas-Geitonas School",
+      },
+      {
+        position: "Deputy President",
+        name: "Aria Karamanlis",
+        school: "St. Catherine’s British School",
+      },
+      {
+        position: "Deputy President",
+        name: "Vasilis Lialios",
+        school: "Erasmios Greek-German School",
+      },
+    ],
+  },
 ]
 
 export default function StudentOfficersPage() {
@@ -116,6 +296,7 @@ export default function StudentOfficersPage() {
                       width={112}
                       height={112}
                       className="h-full w-full object-cover"
+                      style={member.name === "Aggelos Komondouros" ? { objectPosition: "center 30%" } : undefined}
                     />
                   </div>
                 ) : (
@@ -164,9 +345,23 @@ export default function StudentOfficersPage() {
                   </div>
                   <p className="text-sm font-medium text-foreground">{committee.name}</p>
                 </div>
-                <p className="text-sm italic text-muted-foreground">
-                  Chairs to be announced
-                </p>
+                {committee.chairs.length > 0 ? (
+                  <ul className="space-y-4">
+                    {committee.chairs.map((chair) => (
+                      <li key={chair.name}>
+                        <p className="text-xs font-semibold uppercase text-primary">{chair.position}</p>
+                        <p className="mt-1 text-sm font-medium text-foreground">{chair.name}</p>
+                        {chair.school && (
+                          <p className="mt-1 text-sm text-muted-foreground">{chair.school}</p>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-sm italic text-muted-foreground">
+                    Chairs to be announced
+                  </p>
+                )}
               </div>
             ))}
           </div>

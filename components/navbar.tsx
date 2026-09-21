@@ -23,6 +23,7 @@ const mainNavLinks = [
 const registrationLinks = [
   { label: "Registration Guide", href: "/register/guide" },
   { label: "School Registration (Form I)", href: "/register/school" },
+  { label: "Individual Registration", href: "/register/individual" },
   { label: "Student Officer Applications", href: "/apply/chair" },
 ]
 

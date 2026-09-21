@@ -16,9 +16,9 @@ const committees = [
   { name: "Social, Humanitarian and Cultural Committee", abbreviation: "GA3" },
   { name: "Special Political and Decolonization Committee", abbreviation: "GA4" },
   { name: "Legal Committee", abbreviation: "GA6" },
-  { name: "Economic and Social Council", abbreviation: "ECOSOC" },
   { name: "Security Council", abbreviation: "SC" },
-  { name: "World Health Organization", abbreviation: "WHO" },
+  { name: "Economic and Social Council", abbreviation: "ECOSOC" },
+  { name: "Human Rights Council", abbreviation: "HRC" },
   { name: "World Bank", abbreviation: "WB" },
   { name: "UN Educational, Scientific and Cultural Organization", abbreviation: "UNESCO" },
 ]
