@@ -24,7 +24,7 @@ export default function SchoolRegistrationPage() {
               School Registration
             </h1>
             <p className="text-lg leading-relaxed text-primary-foreground/80">
-              Form I — Register your school for MoMUN 2026. Open from April 27 to September 4, 2026.
+              Form I — Register your school for MoMUN 2026.
             </p>
           </div>
         </div>
