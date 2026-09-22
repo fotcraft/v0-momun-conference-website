@@ -82,25 +82,6 @@ export default function RegistrationGuidePage() {
         </div>
       </section>
 
-      {/* Quick Links */}
-      <section className="border-b border-border bg-card py-8">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button asChild>
-              <Link href="/country-list">
-                View Country List
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild className="border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
-              <Link href="/apply/chair">
-                Student Officer Applications
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Important Notice */}
       <section className="py-12">
         <div className="mx-auto max-w-7xl px-6">
@@ -109,7 +90,7 @@ export default function RegistrationGuidePage() {
               <AlertCircle className="h-6 w-6 shrink-0 text-accent" />
               <div>
                 <h3 className="mb-2 font-semibold text-foreground">
-                  Important for Faculty Advisors
+                  Important for School MUN Advisors
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   Before submitting your school registration, please read this guide 
@@ -119,6 +100,12 @@ export default function RegistrationGuidePage() {
                   </Link>{" "}
                   to see available country assignments.
                 </p>
+                <Button asChild className="mt-4">
+                  <Link href="/country-list">
+                    View Country List
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>

@@ -3,8 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { ArrowLeft, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ArrowLeft } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Student Officers | 1st MoMUN 2026",
@@ -365,24 +364,6 @@ export default function StudentOfficersPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Apply CTA */}
-      <section className="bg-primary py-16">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <h2 className="mb-4 font-serif text-3xl font-bold text-primary-foreground">
-            Want to be a Student Officer?
-          </h2>
-          <p className="mb-8 text-primary-foreground/80">
-            Applications for Student Officer positions are open until May 9, 2026.
-          </p>
-          <Button asChild size="lg" variant="secondary">
-            <Link href="/apply/chair">
-              Apply Now
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
         </div>
       </section>
 

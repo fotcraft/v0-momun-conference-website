@@ -93,7 +93,7 @@ export default function AboutPage() {
 
           <div className="mx-auto grid max-w-[816px] gap-6 sm:grid-cols-2">
             {[
-              { name: "John Vlastaras", position: "Conference Manager", initials: "JV", photo: null },
+              { name: "John Vlastaras", position: "Conference Manager", initials: "JV", photo: "/images/organising-team/john-vlastaras.jpeg" },
               { name: "Lefteris Flerianos", position: "MUN Advisor", initials: "LF", photo: "/images/organising-team/lefteris-flerianos.jpg" },
             ].map((member) => (
               <div
@@ -107,7 +107,7 @@ export default function AboutPage() {
                       alt={member.name}
                       width={112}
                       height={112}
-                      className="h-full w-full object-cover"
+                      className={`h-full w-full object-cover ${member.name === "Lefteris Flerianos" ? "scale-[1.43] translate-y-4" : ""}`}
                     />
                   </div>
                 ) : (
