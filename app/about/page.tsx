@@ -76,7 +76,7 @@ export default function AboutPage() {
       </section>
 
       {/* Organising Team */}
-      <section className="py-24">
+      <section className="bg-card py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
@@ -98,7 +98,7 @@ export default function AboutPage() {
             ].map((member) => (
               <div
                 key={member.name}
-                className="rounded-lg border border-border bg-card p-8 text-center"
+                className="rounded-lg border border-border bg-background p-8 text-center"
               >
                 {member.photo ? (
                   <div className="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-full">
