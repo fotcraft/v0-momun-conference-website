@@ -324,7 +324,7 @@ export default function StudentOfficersPage() {
               Committees
             </p>
             <h2 className="mb-4 font-serif text-3xl font-bold text-foreground md:text-4xl">
-              Committee Officers
+              Committee Chairs
             </h2>
             <p className="mx-auto max-w-xl text-muted-foreground">
               Each committee is chaired by experienced student officers who guide
