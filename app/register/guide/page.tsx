@@ -12,12 +12,13 @@ export const metadata: Metadata = {
 
 type DeadlineStatus = "open" | "closed" | "upcoming" | "closing-soon"
 
-interface Deadline {
-  startDate: Date
-  endDate: Date
+type Deadline = {
   event: string
   href?: string
-}
+} & (
+  | { status: DeadlineStatus; startDate?: never; endDate?: never }
+  | { status?: never; startDate: Date; endDate: Date }
+)
 
 const deadlineData: Deadline[] = [
   {
@@ -27,8 +28,7 @@ const deadlineData: Deadline[] = [
     href: "/apply/chair",
   },
   {
-    startDate: new Date("2026-04-27"),
-    endDate: new Date("2026-09-23"),
+    status: "closing-soon",
     event: "Form I (School Registration)",
     href: "/register/school",
   },
@@ -124,7 +124,7 @@ export default function RegistrationGuidePage() {
 
           <div className="flex flex-col gap-4">
             {deadlineData.map((item, index) => {
-              const status = getStatus(item.startDate, item.endDate)
+              const status = item.status !== undefined ? item.status : getStatus(item.startDate, item.endDate)
               const isOpen = status === "open"
               const isClosingSoon = status === "closing-soon"
               const isClosed = status === "closed"
@@ -158,7 +158,7 @@ export default function RegistrationGuidePage() {
                     </span>
                     {isClosingSoon && (
                       <span className="rounded-full bg-[#c47b35] px-2 py-0.5 text-xs font-semibold text-white">
-                        {item.href === "/register/school" ? "Closes soon" : "Closing Soon"}
+                        {item.href === "/register/school" ? "Closing soon" : "Closing Soon"}
                       </span>
                     )}
                     {isOpen && (
@@ -172,11 +172,13 @@ export default function RegistrationGuidePage() {
                       </span>
                     )}
                   </div>
+                  {item.startDate && item.endDate && (
                   <div className="flex items-center gap-3 pl-7 sm:pl-0">
                     <span className={`text-sm ${isActive ? "font-semibold text-primary" : "text-muted-foreground"}`}>
                       {formatDateRange(item.startDate, item.endDate)}
                     </span>
                   </div>
+                  )}
                 </div>
               )
             })}
