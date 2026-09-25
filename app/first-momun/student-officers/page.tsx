@@ -207,8 +207,8 @@ const committees = [
       },
       {
         position: "Deputy President",
-        name: "Milianna Vengerets",
-        school: "International School of Athens",
+        name: "George Kokkinakis",
+        school: "Moraitis School",
       },
     ],
   },
