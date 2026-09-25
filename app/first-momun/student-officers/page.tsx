@@ -71,7 +71,7 @@ const committees = [
     chairs: [
       {
         position: "Chair",
-        name: "Ioanna Ziaka",
+        name: "Ioanna Ziakka",
         school: "Platon School",
       },
       {
