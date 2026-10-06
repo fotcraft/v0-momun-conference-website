@@ -11,6 +11,7 @@ const resources = [
   { label: "Registration Guide", href: "/register/guide" },
   { label: "Country List", href: "/country-list" },
   { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Code of Conduct", href: "/code-of-conduct" },
 ]
 
 export function Footer() {
