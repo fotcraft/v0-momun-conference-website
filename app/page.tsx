@@ -1,3 +1,4 @@
+import { RegistrationNotice } from "@/components/registration-notice"
 import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
 import { HomeAboutSection } from "@/components/home-about-section"
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSection />
       <HomeAboutSection />
       <Footer />
+      <RegistrationNotice />
     </main>
   )
 }

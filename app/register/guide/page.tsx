@@ -15,6 +15,7 @@ type DeadlineStatus = "open" | "closed" | "upcoming" | "closing-soon"
 type Deadline = {
   event: string
   href?: string
+  hideStartDate?: boolean
 } & (
   | { status: DeadlineStatus; startDate?: never; endDate?: never }
   | { status?: never; startDate: Date; endDate: Date }
@@ -34,12 +35,14 @@ const deadlineData: Deadline[] = [
   },
   {
     startDate: new Date("2026-09-10"),
-    endDate: new Date("2026-10-09"),
+    endDate: new Date("2026-10-16"),
+    hideStartDate: true,
     event: "Form II (Delegate Assignment)",
   },
   {
     startDate: new Date("2026-09-14"),
-    endDate: new Date("2026-10-09"),
+    endDate: new Date("2026-10-16"),
+    hideStartDate: true,
     event: "Individual Delegate Registration",
     href: "/register/individual",
   },
@@ -175,7 +178,9 @@ export default function RegistrationGuidePage() {
                   {item.startDate && item.endDate && (
                   <div className="flex items-center gap-3 pl-7 sm:pl-0">
                     <span className={`text-sm ${isActive ? "font-semibold text-primary" : "text-muted-foreground"}`}>
-                      {formatDateRange(item.startDate, item.endDate)}
+                      {item.hideStartDate
+                        ? item.endDate.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
+                        : formatDateRange(item.startDate, item.endDate)}
                     </span>
                   </div>
                   )}
