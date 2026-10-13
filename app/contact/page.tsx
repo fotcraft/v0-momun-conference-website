@@ -108,7 +108,7 @@ export default function ContactPage() {
               {/* Map */}
               <div className="overflow-hidden rounded-lg border border-border">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.5!2d23.78!3d37.99!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bd40b8d9c34f%3A0x8e15e1dc05e3b63a!2sMoraitis%20School!5e0!3m2!1sen!2sgr!4v1"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.5036619226375!2d23.775125344275228!3d38.01203609803728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1986fdadbe0eb%3A0x7fe25f6ae2321796!2sThe+Moraitis+School!5e0!3m2!1sen!2sgr!4v1496598947255"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
