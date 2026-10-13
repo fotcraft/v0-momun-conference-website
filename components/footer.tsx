@@ -12,6 +12,7 @@ const resources = [
   { label: "Country List", href: "/country-list" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Code of Conduct", href: "/code-of-conduct" },
+  { label: "Payment Information", href: "/payment-information" },
 ]
 
 export function Footer() {

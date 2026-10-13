@@ -203,14 +203,12 @@ export default function RegistrationGuidePage() {
 
           <div className="rounded-lg border border-border bg-card p-6">
             <p className="mb-6 text-muted-foreground">
-              Please review the Payment Information document below for full details on fees, bank account information, and payment deadlines.
+              Please review the Payment Information page for full details on fees, bank account information, and payment deadlines.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <Button asChild>
                 <a
-                  href="https://moraitis-my.sharepoint.com/:b:/g/personal/eflerianos_moraitis_edu_gr/IQANvKOuYwuAQ7qn-bW9Z4QJAQ1a1Lov6Sl2Cw19hnnJaJA?e=3e65Q2"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/payment-information"
                 >
                   <FileText className="mr-2 h-4 w-4" />
                   View Payment Information
