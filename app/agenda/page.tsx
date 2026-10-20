@@ -39,7 +39,7 @@ const committees = [
     abbreviation: "GA6",
     name: "Legal Committee",
     topics: [
-      { title: "Clarifying the limits of self-defense under the UN Charter in contemporary conflicts", studyGuideUrl: "#" },
+      { title: "Clarifying the limits of self-defense under the UN Charter in contemporary conflicts", studyGuideUrl: "/documents/study-guides/GA6-T1_AP.pdf" },
       { title: "Defining the scope of digital sovereignty under international law", studyGuideUrl: "#" },
     ],
   },
@@ -55,7 +55,7 @@ const committees = [
     abbreviation: "ECOSOC",
     name: "Economic and Social Council",
     topics: [
-      { title: "Addressing the economic implications of illegal oil transfers in the South China Sea", studyGuideUrl: "#" },
+      { title: "Addressing the economic implications of illegal oil transfers in the South China Sea", studyGuideUrl: "/documents/study-guides/ECOSOC-T1_IS.pdf" },
       { title: "Balancing economic feasibility and environmental sustainability in the adoption of next-generation nuclear energy technologies", studyGuideUrl: "#" },
       { title: "Promoting efficient management of water resources in regions facing scarcity", studyGuideUrl: "#" },
     ],
@@ -73,7 +73,7 @@ const committees = [
     abbreviation: "WB",
     name: "World Bank",
     topics: [
-      { title: "Expanding financial inclusion through digital infrastructure in developing states", studyGuideUrl: "#" },
+      { title: "Expanding financial inclusion through digital infrastructure in developing states", studyGuideUrl: "/documents/study-guides/WB-T1_AT.pdf" },
       { title: "Investing in resilient healthcare systems to mitigate future pandemic risks", studyGuideUrl: "#" },
     ],
   },
