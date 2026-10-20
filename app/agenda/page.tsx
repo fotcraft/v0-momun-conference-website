@@ -15,7 +15,7 @@ const committees = [
     abbreviation: "GA1",
     name: "Disarmament and International Security Committee",
     topics: [
-      { title: "Assessing the implications of drone warfare for asymmetric conflict in the Red Sea", studyGuideUrl: "#" },
+      { title: "Assessing the implications of drone warfare for asymmetric conflict in the Red Sea", studyGuideUrl: "/documents/study-guides/GA1-T2_EC.pdf" },
       { title: "Preventing the use of critical infrastructure sabotage as a means of coercion", studyGuideUrl: "#" },
     ],
   },
@@ -23,7 +23,7 @@ const committees = [
     abbreviation: "GA3",
     name: "Social, Humanitarian and Cultural Committee",
     topics: [
-      { title: "Addressing the cultural assimilation of marginalised refugee communities", studyGuideUrl: "#" },
+      { title: "Addressing the cultural assimilation of marginalised refugee communities", studyGuideUrl: "/documents/study-guides/GA3-T1_KP.pdf" },
       { title: "Combatting honour-based abuse and killings and ensuring the protection of victims", studyGuideUrl: "#" },
     ],
   },
@@ -31,7 +31,7 @@ const committees = [
     abbreviation: "GA4",
     name: "Special Political and Decolonization Committee",
     topics: [
-      { title: "Ensuring stability in regions affected by protracted and frozen conflicts", studyGuideUrl: "#" },
+      { title: "Ensuring stability in regions affected by protracted and frozen conflicts", studyGuideUrl: "/documents/study-guides/GA4-T1_APV.pdf" },
       { title: "The situation in Nakhchivan", studyGuideUrl: "#" },
     ],
   },
@@ -48,7 +48,7 @@ const committees = [
     name: "Security Council",
     topics: [
       { title: "Maintaining peace and security in the Strait of Hormuz during periods of heightened tensions", studyGuideUrl: "#" },
-      { title: "Responding to the escalating instability in the Darfur region following the Siege of El Fasher", studyGuideUrl: "#" },
+      { title: "Responding to the escalating instability in the Darfur region following the Siege of El Fasher", studyGuideUrl: "/documents/study-guides/SC-T2_EM.pdf" },
     ],
   },
   {
@@ -64,7 +64,7 @@ const committees = [
     abbreviation: "HRC",
     name: "Human Rights Council",
     topics: [
-      { title: "Ensuring protection against discrimination based on sexual orientation while upholding international human rights obligations", studyGuideUrl: "#" },
+      { title: "Ensuring protection against discrimination based on sexual orientation while upholding international human rights obligations", studyGuideUrl: "/documents/study-guides/HRC-T1_AT.pdf" },
       { title: "Eradicating human trafficking networks through international cooperation", studyGuideUrl: "#" },
       { title: "Ensuring the protection of media workers and journalists in conflict zones", studyGuideUrl: "#" },
     ],
@@ -81,7 +81,7 @@ const committees = [
     abbreviation: "UNESCO",
     name: "UN Educational, Scientific and Cultural Organization",
     topics: [
-      { title: "Mitigating anthropogenic degradation of cultural heritage sites", studyGuideUrl: "#" },
+      { title: "Mitigating anthropogenic degradation of cultural heritage sites", studyGuideUrl: "/documents/study-guides/UNESCO-T1_AK.pdf" },
       { title: "Addressing the exclusion of scientific theories from national education curricula due to cultural and ideological factors", studyGuideUrl: "#" },
       { title: "Balancing globalisation-driven economic development and the preservation of cultural heritage", studyGuideUrl: "#" },
     ],
