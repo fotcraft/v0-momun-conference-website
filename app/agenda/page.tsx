@@ -48,7 +48,7 @@ const committees = [
     name: "Security Council",
     topics: [
       { title: "Maintaining peace and security in the Strait of Hormuz during periods of heightened tensions", studyGuideUrl: "#" },
-      { title: "Responding to the escalating instability in the Darfur region following the Siege of El Fasher", studyGuideUrl: "/documents/study-guides/SC-T2_EM.pdf" },
+      { title: "Responding to the escalating instability in the Darfur region following the Siege of El Fasher", studyGuideUrl: "#" },
     ],
   },
   {
