@@ -47,7 +47,7 @@ const committees = [
     abbreviation: "SC",
     name: "Security Council",
     topics: [
-      { title: "Maintaining peace and security in the Strait of Hormuz during periods of heightened tensions", studyGuideUrl: "#" },
+      { title: "Maintaining peace and security in the Strait of Hormuz during periods of heightened tensions", studyGuideUrl: "/documents/study-guides/SC-T1_SA.pdf" },
       { title: "Responding to the escalating instability in the Darfur region following the Siege of El Fasher", studyGuideUrl: "/documents/study-guides/SC-T2_EM.pdf" },
     ],
   },
@@ -57,7 +57,7 @@ const committees = [
     topics: [
       { title: "Addressing the economic implications of illegal oil transfers in the South China Sea", studyGuideUrl: "/documents/study-guides/ECOSOC-T1_IS.pdf" },
       { title: "Balancing economic feasibility and environmental sustainability in the adoption of next-generation nuclear energy technologies", studyGuideUrl: "/documents/study-guides/ECOSOC-T3_KG.pdf" },
-      { title: "Promoting efficient management of water resources in regions facing scarcity", studyGuideUrl: "#" },
+      { title: "Promoting efficient management of water resources in regions facing scarcity", studyGuideUrl: "/documents/study-guides/ECOSOC-T2_SS.pdf" },
     ],
   },
   {
@@ -74,7 +74,7 @@ const committees = [
     name: "World Bank",
     topics: [
       { title: "Expanding financial inclusion through digital infrastructure in developing states", studyGuideUrl: "/documents/study-guides/WB-T1_AT.pdf" },
-      { title: "Investing in resilient healthcare systems to mitigate future pandemic risks", studyGuideUrl: "#" },
+      { title: "Investing in resilient healthcare systems to mitigate future pandemic risks", studyGuideUrl: "/documents/study-guides/WB-T2_GK.pdf" },
     ],
   },
   {
