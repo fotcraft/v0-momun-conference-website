@@ -16,7 +16,7 @@ const committees = [
     name: "Disarmament and International Security Committee",
     topics: [
       { title: "Assessing the implications of drone warfare for asymmetric conflict in the Red Sea", studyGuideUrl: "/documents/study-guides/GA1-T2_EC.pdf" },
-      { title: "Preventing the use of critical infrastructure sabotage as a means of coercion", studyGuideUrl: "#" },
+      { title: "Preventing the use of critical infrastructure sabotage as a means of coercion", studyGuideUrl: "/documents/study-guides/GA1-T1_EM.pdf" },
     ],
   },
   {
@@ -32,7 +32,7 @@ const committees = [
     name: "Special Political and Decolonization Committee",
     topics: [
       { title: "Ensuring stability in regions affected by protracted and frozen conflicts", studyGuideUrl: "/documents/study-guides/GA4-T1_APV.pdf" },
-      { title: "The situation in Nakhchivan", studyGuideUrl: "#" },
+      { title: "The situation in Nakhchivan", studyGuideUrl: "/documents/study-guides/GA4-T2_PP.pdf" },
     ],
   },
   {
@@ -40,7 +40,7 @@ const committees = [
     name: "Legal Committee",
     topics: [
       { title: "Clarifying the limits of self-defense under the UN Charter in contemporary conflicts", studyGuideUrl: "/documents/study-guides/GA6-T1_AP.pdf" },
-      { title: "Defining the scope of digital sovereignty under international law", studyGuideUrl: "#" },
+      { title: "Defining the scope of digital sovereignty under international law", studyGuideUrl: "/documents/study-guides/GA6-T2_SD.pdf" },
     ],
   },
   {
@@ -48,7 +48,7 @@ const committees = [
     name: "Security Council",
     topics: [
       { title: "Maintaining peace and security in the Strait of Hormuz during periods of heightened tensions", studyGuideUrl: "#" },
-      { title: "Responding to the escalating instability in the Darfur region following the Siege of El Fasher", studyGuideUrl: "#" },
+      { title: "Responding to the escalating instability in the Darfur region following the Siege of El Fasher", studyGuideUrl: "/documents/study-guides/SC-T2_EM.pdf" },
     ],
   },
   {
@@ -56,7 +56,7 @@ const committees = [
     name: "Economic and Social Council",
     topics: [
       { title: "Addressing the economic implications of illegal oil transfers in the South China Sea", studyGuideUrl: "/documents/study-guides/ECOSOC-T1_IS.pdf" },
-      { title: "Balancing economic feasibility and environmental sustainability in the adoption of next-generation nuclear energy technologies", studyGuideUrl: "#" },
+      { title: "Balancing economic feasibility and environmental sustainability in the adoption of next-generation nuclear energy technologies", studyGuideUrl: "/documents/study-guides/ECOSOC-T3_KG.pdf" },
       { title: "Promoting efficient management of water resources in regions facing scarcity", studyGuideUrl: "#" },
     ],
   },
