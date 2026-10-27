@@ -65,8 +65,8 @@ const committees = [
     name: "Human Rights Council",
     topics: [
       { title: "Ensuring protection against discrimination based on sexual orientation while upholding international human rights obligations", studyGuideUrl: "/documents/study-guides/HRC-T1_AT.pdf" },
-      { title: "Eradicating human trafficking networks through international cooperation", studyGuideUrl: "#" },
-      { title: "Ensuring the protection of media workers and journalists in conflict zones", studyGuideUrl: "#" },
+      { title: "Eradicating human trafficking networks through international cooperation", studyGuideUrl: "/documents/study-guides/HRC-T3_CP.pdf" },
+      { title: "Ensuring the protection of media workers and journalists in conflict zones", studyGuideUrl: "/documents/study-guides/HRC-T2_PK.pdf" },
     ],
   },
   {
