@@ -24,7 +24,7 @@ const committees = [
     name: "Social, Humanitarian and Cultural Committee",
     topics: [
       { title: "Addressing the cultural assimilation of marginalised refugee communities", studyGuideUrl: "/documents/study-guides/GA3-T1_KP.pdf" },
-      { title: "Combatting honour-based abuse and killings and ensuring the protection of victims", studyGuideUrl: "#" },
+      { title: "Combatting honour-based abuse and killings and ensuring the protection of victims", studyGuideUrl: "/documents/study-guides/GA3-T2_MK.pdf" },
     ],
   },
   {
@@ -82,8 +82,8 @@ const committees = [
     name: "UN Educational, Scientific and Cultural Organization",
     topics: [
       { title: "Mitigating anthropogenic degradation of cultural heritage sites", studyGuideUrl: "/documents/study-guides/UNESCO-T1_AK.pdf" },
-      { title: "Addressing the exclusion of scientific theories from national education curricula due to cultural and ideological factors", studyGuideUrl: "#" },
-      { title: "Balancing globalisation-driven economic development and the preservation of cultural heritage", studyGuideUrl: "#" },
+      { title: "Addressing the exclusion of scientific theories from national education curricula due to cultural and ideological factors", studyGuideUrl: "/documents/study-guides/UNESCO-T2_ET.pdf" },
+      { title: "Balancing globalisation-driven economic development and the preservation of cultural heritage", studyGuideUrl: "/documents/study-guides/UNESCO-T3_VL.pdf" },
     ],
   },
 ]
