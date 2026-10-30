@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import Image from "next/image"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { AlertCircle, Clock } from "lucide-react"
@@ -119,6 +120,25 @@ export default function ProgrammePage() {
               </section>
             ))}
           </div>
+
+          <aside aria-labelledby="meals-sponsor-heading" className="mt-16 flex flex-col items-center gap-6 text-center">
+            <p
+              id="meals-sponsor-heading"
+              className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground"
+            >
+              Meals sponsored by
+            </p>
+            <div className="w-full max-w-5xl overflow-hidden rounded-lg border border-border bg-card">
+              <Image
+                src="/images/sponsors/tonotil-banner.jpg"
+                alt="Tonotil by Vianex – meals sponsor of MoMUN 2026"
+                width={1920}
+                height={600}
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                className="h-auto w-full"
+              />
+            </div>
+          </aside>
         </div>
       </section>
 
