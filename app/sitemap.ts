@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/apply/chair",
     "/country-list",
     "/info/travel",
+    "/manuals",
     "/contact",
     "/privacy-policy",
     "/code-of-conduct",

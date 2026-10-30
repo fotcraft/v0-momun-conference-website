@@ -32,6 +32,7 @@ const registrationLinks = [
 ]
 
 const infoLinks = [
+  { label: "Manuals", href: "/manuals" },
   { label: "Travel & Accommodation", href: "/info/travel" },
   { label: "Contact", href: "/contact" },
 ]
